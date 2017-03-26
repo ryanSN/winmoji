@@ -1,18 +1,21 @@
 import React from 'react'
-import emojilib from 'emojilib'
 
-const Results = () => {
-  const emojis = Object.keys(emojilib.lib).map((s) => { return emojilib.lib[s] })
-
+const Results = ({filteredContent, onEmojiClick}) => {
   return (
     <ul>
       {
-      emojis.map((emoji, idx) => {
-        return (
-          <li key={idx}><a href="#">{emoji.char}</a></li>
-        )
-      })
-    }
+        filteredContent.map((emoji, idx) => {
+          return (
+            <li key={idx} className='results__item'>
+              <a href='#'
+                className='results__link'
+                onClick={() => onEmojiClick(this, emoji)}>
+                {emoji.char}
+              </a>
+            </li>
+          )
+        })
+      }
     </ul>
   )
 }

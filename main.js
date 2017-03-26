@@ -3,25 +3,21 @@ const path = require('path')
 
 const mainPage = path.join('file://', __dirname, '/index.html')
 
+const appName = 'winEmoji'
 let mainWindow
-let isQuitting = false
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
-    width: 1400,
-    height: 800,
-    'min-height': 800,
-    'max-height': 1400
+    width: 280,
+    height: 400,
+    title: appName + ' - windows emoji helper',
+    'min-height': 400,
+    'max-width': 280,
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
   })
 
   mainWindow.loadURL(mainPage)
-
-  mainWindow.on('close', (e) => {
-    if (!isQuitting) {
-      e.preventDefault()
-      mainWindow.hide()
-    }
-  })
+  mainWindow.setMenu(null)
 }
 
 app.on('ready', createWindow)
@@ -30,6 +26,6 @@ app.on('window-all-closed', () => {
   app.quit()
 })
 
-app.on('before-quit', () => {
-  isQuitting = true
+app.on('quit', () => {
+  console.log('app quitting')
 })

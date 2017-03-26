@@ -2,8 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  target: 'web',
-  // target: 'electron-main',
+  target: 'electron-main',
   entry: './app/app.js',
   output: {
     filename: 'bundle.js',
