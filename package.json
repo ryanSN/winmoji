@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "standard",
-    "start": "electron main.js",
+    "test": "standard && jest",
+    "start": "yarn build && electron main.js",
     "build": "./node_modules/.bin/webpack",
     "dev": "yarn webpack-dev-server -g --progress --colors",
     "package": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"winMoji\""
@@ -28,6 +29,7 @@
     "electron": "^1.6.2",
     "electron-packager": "^8.6.0",
     "electron-winstaller": "^2.5.2",
+    "jest": "^19.0.2",
     "pre-commit": "^1.2.2",
     "standard": "^9.0.2",
     "webpack": "^2.3.2",
@@ -36,6 +38,28 @@
   "pre-commit": [
     "lint"
   ],
+  "standard": {
+    "globals": [
+      "describe",
+      "context",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "expect"
+    ]
+  },
+  "jest": {
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
   "babel": {
     "presets": [
       "es2015",
