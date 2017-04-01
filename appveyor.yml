@@ -21,3 +21,10 @@ test_script:
   - yarn --version
   - yarn
   - yarn test
+
+deploy:
+  - node --version
+  - yarn --version
+  - yarn
+  - yarn test
+  - yarn release
