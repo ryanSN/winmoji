@@ -31,8 +31,6 @@
     "electron": "^1.6.2",
     "electron-builder": "^16.6.1",
     "electron-builder-squirrel-windows": "^16.6.0",
-    "electron-packager": "^8.6.0",
-    "electron-winstaller": "^2.5.2",
     "jest": "^19.0.2",
     "pre-commit": "^1.2.2",
     "standard": "^9.0.2",
