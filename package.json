@@ -12,7 +12,9 @@
     "start": "yarn build && electron main.js",
     "build": "./node_modules/.bin/webpack",
     "dev": "yarn webpack-dev-server -g --progress --colors",
-    "package": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"winMoji\""
+    "package": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"winMoji\"",
+    "pack": "build --dir",
+    "release": "build --win"
   },
   "dependencies": {
     "electron-localshortcut": "^1.1.1",
@@ -27,6 +29,8 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "electron": "^1.6.2",
+    "electron-builder": "^16.6.1",
+    "electron-builder-squirrel-windows": "^16.6.0",
     "electron-packager": "^8.6.0",
     "electron-winstaller": "^2.5.2",
     "jest": "^19.0.2",
@@ -65,6 +69,13 @@
       "es2015",
       "stage-2"
     ]
+  },
+  "build": {
+    "appId": "com.rchatters.winmoji",
+    "directories": {
+      "buildResources": "assets/icons/win"
+    },
+    "target": "squirrel"
   },
   "engines": {
     "node": ">= 7.4.0"
