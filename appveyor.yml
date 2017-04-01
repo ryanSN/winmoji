@@ -23,7 +23,7 @@ test_script:
   - yarn test
 
 artifacts:
-  - path: dist
+  - path: dist\*
 
 build_script:
   - node --version
@@ -31,3 +31,13 @@ build_script:
   - yarn
   - yarn test
   - yarn release
+
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
+    artifact: dist\*
+    draft: true
+    prerelease: false
+    on:
+      appveyor_repo_tag: true
