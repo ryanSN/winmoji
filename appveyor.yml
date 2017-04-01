@@ -22,7 +22,10 @@ test_script:
   - yarn
   - yarn test
 
-deploy:
+artifacts:
+  - path: dist
+
+build_script:
   - node --version
   - yarn --version
   - yarn
