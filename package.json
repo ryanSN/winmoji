@@ -10,11 +10,10 @@
     "lint": "standard",
     "test": "standard && jest",
     "start": "yarn build && electron main.js",
-    "build": "./node_modules/.bin/webpack",
+    "compile": "./node_modules/.bin/webpack",
     "dev": "yarn webpack-dev-server -g --progress --colors",
-    "package": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"winMoji\"",
-    "pack": "build --dir",
-    "release": "build --win"
+    "pack": "yarn compile && build --dir",
+    "release": "yarn compile && build --win"
   },
   "dependencies": {
     "electron-localshortcut": "^1.1.1",
