@@ -1,0 +1,23 @@
+# appveyor
+version: "{build}"
+
+init:
+  - git config --global core.autocrlf input
+
+environment:
+  nodejs_version: "7.4.0"
+
+cache:
+  - node_modules -> package.json
+
+install:
+  - ps: Install-Product node $env:node_version
+  - yarn install
+
+build: off
+
+test_script:
+  - node --version
+  - yarn --version
+  - yarn
+  - yarn test
