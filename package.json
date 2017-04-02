@@ -13,7 +13,7 @@
     "compile": "./node_modules/.bin/webpack",
     "dev": "yarn webpack-dev-server -g --progress --colors",
     "pack": "yarn compile && build --dir",
-    "release": "yarn compile && build --win --ia32"
+    "release": "yarn compile && build --win --x64"
   },
   "dependencies": {
     "electron-localshortcut": "^1.1.1",
@@ -72,13 +72,14 @@
     "copyright": "Copyright (c) 2017 rchatters",
     "productName": "winMoji",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "assets/icons/win/icon.ico"
     },
     "nsis": {
       "oneClick": false
     },
     "directories": {
-      "buildResources": "assets/icons/win"
+      "buildResources": "build"
     }
   },
   "engines": {
