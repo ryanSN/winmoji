@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "standard",
     "test": "standard && jest",
-    "start": "yarn build && electron main.js",
+    "start": "yarn compile && electron main.js",
     "compile": "./node_modules/.bin/webpack",
     "dev": "yarn webpack-dev-server -g --progress --colors",
     "pack": "yarn compile && build --dir",
