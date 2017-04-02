@@ -1,10 +1,12 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const tray = require('./tray')
 
 const mainPage = path.join('file://', __dirname, '/index.html')
 
 const appName = 'winEmoji'
 let mainWindow
+let isQuitting = false
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
@@ -18,14 +20,22 @@ const createWindow = () => {
 
   mainWindow.loadURL(mainPage)
   mainWindow.setMenu(null)
+  tray.create(mainWindow)
+
+  mainWindow.on('close', e => {
+    if (!isQuitting) {
+      e.preventDefault()
+      mainWindow.hide()
+    }
+  })
 }
 
 app.on('ready', createWindow)
 
-app.on('window-all-closed', () => {
-  app.quit()
+app.on('activate', () => {
+  mainWindow.show()
 })
 
-app.on('quit', () => {
-  console.log('app quitting')
+app.on('before-quit', () => {
+  console.log(!mainWindow.isFullScreen())
 })
