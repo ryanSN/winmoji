@@ -1,4 +1,6 @@
 ## winMoji
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ryanSN/winmoji.svg)](https://greenkeeper.io/)
 [![Build status](https://ci.appveyor.com/api/projects/status/jb7laepqr55yy8gc?svg=true)](https://ci.appveyor.com/project/ryanSN/winmoji)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
