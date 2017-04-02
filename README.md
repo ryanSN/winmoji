@@ -4,6 +4,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/jb7laepqr55yy8gc?svg=true)](https://ci.appveyor.com/project/ryanSN/winmoji)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Known Vulnerabilities](https://snyk.io/test/github/ryanSN/winmoji/badge.svg)](https://snyk.io/test/github/ryanSN/winmoji)
+[![GitHub version](https://badge.fury.io/gh/ryansn%2Fwinmoji.svg)](https://github.com/ryanSN/winmoji/releases)
 
 Look up emoji's on windows!
 
