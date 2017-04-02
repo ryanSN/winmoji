@@ -25,7 +25,6 @@ const createWindow = () => {
   mainWindow.on('close', e => {
     if (!isQuitting) {
       e.preventDefault()
-
       mainWindow.hide()
     }
   })
@@ -36,8 +35,6 @@ app.on('ready', createWindow)
 app.on('activate', () => {
   mainWindow.show()
 })
-
-
 
 app.on('before-quit', () => {
   console.log(!mainWindow.isFullScreen())

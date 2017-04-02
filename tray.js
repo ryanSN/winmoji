@@ -1,5 +1,5 @@
-const path = require('path');
-const electron = require('electron');
+const path = require('path')
+const electron = require('electron')
 
 const app = electron.app
 let tray = null
@@ -22,7 +22,7 @@ exports.create = win => {
   const contextMenu = electron.Menu.buildFromTemplate([
     {
       label: 'Toggle',
-      click() {
+      click () {
         toggleWindow()
       }
     },
@@ -34,8 +34,8 @@ exports.create = win => {
     }
   ])
 
- tray = new electron.Tray(iconPath)
- tray.setToolTip(`${app.getName()}`)
- tray.setContextMenu(contextMenu)
- tray.on('click', toggleWindow)
+  tray = new electron.Tray(iconPath)
+  tray.setToolTip(`${app.getName()}`)
+  tray.setContextMenu(contextMenu)
+  tray.on('click', toggleWindow)
 }
