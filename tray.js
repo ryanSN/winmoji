@@ -9,7 +9,7 @@ exports.create = win => {
     return
   }
 
-  const iconPath = path.join(__dirname, 'assets/icons/png/64x64.png')
+  const iconPath = path.join(__dirname, 'assets/icons/win/icon.ico')
 
   const toggleWindow = () => {
     if (win.isVisible()) {

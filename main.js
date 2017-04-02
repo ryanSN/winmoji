@@ -37,5 +37,6 @@ app.on('activate', () => {
 })
 
 app.on('before-quit', () => {
+  isQuitting = true
   console.log(!mainWindow.isFullScreen())
 })
