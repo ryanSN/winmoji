@@ -6,17 +6,36 @@ Look up emoji's on windows!
 
 🤓😎😆😐
 
-Clicking on the emoji saves the emoji to your clipboard to be pasted anywhere you need it.
-
 <div align="center">
   <h1>
     <img src="https://github.com/ryanSN/winmoji/blob/master/winMoji.gif" alt="winMoji" title="winMoji" />
   </h1>
 </div>
 
-## development
-```
+## Features
+Clicking on the emoji saves the emoji to your clipboard to be pasted anywhere you need it.
+
+## Download
+You can manually download the latest release [here](https://github.com/ryanSN/winmoji/releases)
+
+## Development
+
+Feel free to contribute to this app. To develop run the following commands
+
+```Shell
 yarn
 yarn build
 yarn start
 ```
+
+## Distribute
+
+```Shell
+yarn release
+```
+**OR**
+
+ To package for debug purpose
+ ```Shell
+ yarn pack
+ ```
