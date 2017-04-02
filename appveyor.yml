@@ -16,11 +16,16 @@ install:
 
 build: off
 
+# "test pipe"
 test_script:
   - node --version
   - yarn --version
   - yarn
   - yarn test
+
+branches:
+  only:
+    - master
 
 artifacts:
   - path: dist\*
