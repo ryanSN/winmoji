@@ -23,10 +23,6 @@ test_script:
   - yarn
   - yarn test
 
-branches:
-  only:
-    - master
-
 artifacts:
   - path: dist\*
 
