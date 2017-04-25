@@ -21,7 +21,8 @@ test_script:
   - node --version
   - yarn --version
   - yarn
-  - yarn test
+  #- yarn test
+  - yarn coverage
 
 artifacts:
   - path: dist\*
