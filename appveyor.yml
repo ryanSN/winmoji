@@ -30,8 +30,10 @@ build_script:
   - node --version
   - yarn --version
   - yarn
-  - yarn test
+  #- yarn test
+  - yarn coverage
   - yarn release
+
 
 deploy:
   - provider: GitHub
