@@ -1,11 +1,10 @@
-## winMoji
+## winMoji  [v1.0.1](https://github.com/ryanSN/winmoji/releases)
 
 [![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
 [![Build status](https://ci.appveyor.com/api/projects/status/jb7laepqr55yy8gc?svg=true)](https://ci.appveyor.com/project/ryanSN/winmoji)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Known Vulnerabilities](https://snyk.io/test/github/ryanSN/winmoji/badge.svg)](https://snyk.io/test/github/ryanSN/winmoji)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ryanSN/winmoji.svg)](https://greenkeeper.io/)
-[![GitHub version](https://badge.fury.io/gh/ryansn%2Fwinmoji.svg)](https://github.com/ryanSN/winmoji/releases)
 
 Look up emoji's on windows!
 
