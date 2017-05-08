@@ -36,7 +36,7 @@ const createWindow = () => {
       e.preventDefault()
       mainWindow.hide()
       let { x, y } = mainWindow.getBounds()
-      store.set('windowsBounds', { x, y })
+      store.set('windowBounds', { x, y })
     }
   })
 }
