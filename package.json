@@ -17,6 +17,7 @@
     "release": "yarn compile && build --win --x64"
   },
   "dependencies": {
+    "electron-config": "^1.0.0",
     "electron-localshortcut": "^1.1.1",
     "emojilib": "^2.2.0",
     "react": "^15.4.2",
