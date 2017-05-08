@@ -1,4 +1,4 @@
-## winMoji  [v1.0.1](https://github.com/ryanSN/winmoji/releases)
+## winMoji  [v1.1.0](https://github.com/ryanSN/winmoji/releases)
 
 [![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
 [![Build status](https://ci.appveyor.com/api/projects/status/jb7laepqr55yy8gc?svg=true)](https://ci.appveyor.com/project/ryanSN/winmoji)
