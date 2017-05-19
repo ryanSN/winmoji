@@ -14,7 +14,7 @@
     "compile": "./node_modules/.bin/webpack",
     "dev": "yarn webpack-dev-server -g --progress --colors",
     "pack": "yarn compile && build --dir",
-    "release": "yarn compile && build --win --x64"
+    "release": "rm -rf dist && yarn compile && build --win --x64 --ia32"
   },
   "dependencies": {
     "electron-config": "^1.0.0",
