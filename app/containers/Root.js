@@ -2,7 +2,37 @@ import React, {Component} from 'react'
 import Search from '../components/Search'
 import Results from '../components/Results'
 import emojilib from 'emojilib'
+import lev from 'fast-levenshtein'
 import {clipboard} from 'electron'
+
+const similarity = (() => {
+  const mem = {}
+  return (_a) => (_b) => {
+    const [a, b] = _b < _a ? [_b, _a] : [_a, _b]
+
+    if (!([a, b] in mem)) {
+      mem[[a, b]] = 1 - lev.get(a, b) / Math.max(a.length, b.length)
+    }
+
+    return mem[[a, b]]
+  }
+})()
+
+const emojiList = (search) => {
+  const emojis = Object.entries(emojilib.lib)
+    .map(([name, details]) => {
+      const searchSim = similarity(search)
+      const sims = [searchSim(name)].concat(details.keywords.map(searchSim))
+      return {name, sim: Math.max.apply(null, sims)}
+    })
+    .filter(({name, sim}) => sim >= 0.5)
+    .sort((a, b) => b.sim - a.sim)
+    .map(({name}) => emojilib.lib[name])
+
+  return emojis.length === 0
+    ? Object.values(emojilib.lib)
+    : emojis
+}
 
 export default class Root extends Component {
   constructor () {
@@ -24,9 +54,7 @@ export default class Root extends Component {
   }
 
   render () {
-    const emojis = Object.keys(emojilib.lib).filter((key) => {
-      return key.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
-    }).map((s) => { return emojilib.lib[s] })
+    const emojis = emojiList(this.state.search.toLowerCase())
 
     return (
       <div>
