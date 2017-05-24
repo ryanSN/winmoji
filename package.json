@@ -33,7 +33,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "coveralls": "^2.13.0",
     "electron": "^1.6.2",
-    "electron-builder": "^17.0.0",
+    "electron-builder": "^18.0.1",
     "electron-builder-squirrel-windows": "^17.0.1",
     "jest": "^20.0.3",
     "pre-commit": "^1.2.2",
