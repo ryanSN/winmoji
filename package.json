@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "electron-config": "^1.0.0",
-    "electron-localshortcut": "^1.1.1",
+    "electron-localshortcut": "^2.0.0",
     "emojilib": "^2.2.0",
     "fast-levenshtein": "^2.0.6",
     "react": "^15.4.2",
