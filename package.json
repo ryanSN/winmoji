@@ -10,11 +10,12 @@
     "lint": "standard",
     "test": "standard && jest",
     "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
-    "start": "yarn compile && electron main.js",
+    "start": "yarn && yarn compile && electron main.js",
     "compile": "./node_modules/.bin/webpack",
-    "dev": "yarn webpack-dev-server -g --progress --colors",
+    "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
-    "release": "rm -rf dist && yarn compile && build --win --x64 --ia32"
+    "make:install": "rm -rf dist && yarn compile && build --win --x64",
+    "release": "yarn make:install"
   },
   "dependencies": {
     "electron-config": "^1.0.0",
