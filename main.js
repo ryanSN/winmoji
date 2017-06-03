@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, globalShortcut} = require('electron')
 const path = require('path')
 const tray = require('./tray')
 const Store = require('electron-config')
@@ -39,7 +39,29 @@ const createWindow = () => {
       store.set('windowBounds', { x, y })
     }
   })
+
+  // register global shortcut
+  const ret = globalShortcut.register('CommandOrControl+Shift+E', () => {
+    if (!mainWindow.isVisible()) {
+      mainWindow.show()
+    } else {
+      mainWindow.hide()
+    }
+  })
+
+  if (!ret) {
+    console.log('reg failed')
+  }
 }
+
+app.on('will-quit', () => {
+  // clean up after ourselves
+  // Unregister a shortcut.
+  globalShortcut.unregister('CommandOrControl+X')
+
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll()
+})
 
 app.on('ready', createWindow)
 
