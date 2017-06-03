@@ -41,17 +41,13 @@ const createWindow = () => {
   })
 
   // register global shortcut
-  const ret = globalShortcut.register('CommandOrControl+Shift+E', () => {
+  globalShortcut.register('CommandOrControl+Shift+E', () => {
     if (!mainWindow.isVisible()) {
       mainWindow.show()
     } else {
       mainWindow.hide()
     }
   })
-
-  if (!ret) {
-    console.log('reg failed')
-  }
 }
 
 app.on('will-quit', () => {
