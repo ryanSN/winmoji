@@ -20,8 +20,14 @@ Look up emoji's on windows! It's an alternative solution to using the windows on
 ## Features
 Clicking on the emoji saves the emoji to your clipboard to be pasted anywhere you need it.
 
-## Download
+## Download/Install
 You can manually download the latest release [here](https://github.com/ryanSN/winmoji/releases)
+
+
+## How do I contribute to `winMoji` ?
+
+Contributions are welcome! Checkout our [issues](https://github.com/ryansn/winMoji/issues) list or contribute to one of the [PRs](https://github.com/ryansn/winMoji/pulls).
+Make your own if you want something and don't see it listed.
 
 ## Development
 

@@ -21,6 +21,9 @@ We actively welcome your pull requests.
 1. All pull requests should be made to the master branch.
 2. Always make sure all the tests are passing before sending a pull request.
 
+## Releases
+
+Declaring formal releases remains the prerogative of the project maintainer.
 
 ## Developer Certificate of Origin 1.0
 
