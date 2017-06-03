@@ -15,7 +15,7 @@ We actively welcome your pull requests.
 2. If you've added code that should be tested, add tests
 3. Ensure the test suite passes.
 4. Make sure your code lints (we use `[standard](https://standardjs.com/)`)
-5. Submitting a Pull requests means you agree to our [Developer Certificate of Origin](#developer-certificate-of-origin-1.0)
+5. Submitting a Pull requests means you agree to our [Developer Certificate of Origin](#developer-certificate-of-origin-10)
 
 ## Rules
 1. All pull requests should be made to the master branch.
