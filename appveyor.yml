@@ -1,43 +1,42 @@
 # appveyor
 version: "{build}"
 
-platform: x64
+platform:
+  - x64
 
-branches:
-  only:
-    - master
-    - /^greenkeeper-.*$/
+# Fix line endings on Windows
+init:
+  - git config --global core.autocrlf input
 
 environment:
-  nodejs_version: "7.4.0"
+  matrix:
+    - nodejs_version: "7.4.0"
   GH_TOKEN:
-      secure: 4aEqyk52NGufQrXiG9ONP/F2BpLvfeaRE+uGYPrrftf3sN60Bagb951EVHXnMIka
+    secure: lbTBOM5qMTqpAAp/tMEHULcIpDNLAC+pGV3hIvBZdj0BUQdCrVmrD1kY+j05e42/
+
+matrix:
+  fast_finish: true
 
 cache:
   - node_modules -> package.json
+  - node_modules -> yarn.lock
+  - '%USERPROFILE%\.electron'
 
 install:
   - ps: Install-Product node $env:node_version
   - yarn install
+  - yarn add electron-builder@next --dev # force install next version to test electron-builder
+
+artifacts:
+  - path: dist\*
 
 # "test pipe"
 test_script:
   - node --version
   - yarn --version
   - yarn
-  - yarn test
-
-artifacts:
-  - path: dist\*
-
-build_script:
-  - node --version
-  - yarn --version
-  - yarn
-  #- yarn test
   - yarn coverage
-  - yarn release
-
+  - yarn make:install
 
 # deploy:
 #   - provider: GitHub
@@ -48,4 +47,5 @@ build_script:
 #     prerelease: false
 #     on:
 #       appveyor_repo_tag: true
+
 build: off
