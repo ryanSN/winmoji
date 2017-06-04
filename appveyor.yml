@@ -36,11 +36,6 @@ artifacts:
   - path: dist\*
 
 build_script:
-  - node --version
-  - yarn --version
-  - yarn
-  - yarn test
-  - yarn coverage
   - yarn release
 
 deploy:
@@ -52,4 +47,3 @@ deploy:
     prerelease: false
     on:
       appveyor_repo_tag: true
-build: off
