@@ -22,9 +22,6 @@ install:
   - yarn install
   - yarn add electron-builder@next --dev # force install next version to test electron-builder
 
-build:
-  verbosity: minimal
-
 artifacts:
   - path: dist\*
 
