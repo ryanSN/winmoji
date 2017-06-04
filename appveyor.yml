@@ -1,12 +1,11 @@
 # appveyor
 version: "{build}"
 
-platform: x64
+platform:
+  - x64
 
-branches:
-  only:
-    - master
-    - /^greenkeeper-.*$/
+init:
+  - git config --global core.autocrlf input
 
 environment:
   nodejs_version: "7.4.0"
@@ -15,37 +14,36 @@ environment:
 
 cache:
   - node_modules -> package.json
+  - '%APPDATA%\npm-cache'
+  - '%APPDATA%\npm-cache -> yarn.lock'
+  - node_modules -> yarn.lock
+  - '%USERPROFILE%\.electron'
 
 install:
   - ps: Install-Product node $env:node_version
   - yarn install
+  - yarn add electron-builder@next --dev # force install next version to test electron-builder
 
 # "test pipe"
 test_script:
   - node --version
   - yarn --version
   - yarn
-  - yarn test
+  - yarn coverage
+#   - yarn test
 
 artifacts:
   - path: dist\*
 
 build_script:
-  - node --version
-  - yarn --version
-  - yarn
-  #- yarn test
-  - yarn coverage
   - yarn release
 
-
-# deploy:
-#   - provider: GitHub
-#     auth_token:
-#       secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
-#     artifact: dist\*
-#     draft: true
-#     prerelease: false
-#     on:
-#       appveyor_repo_tag: true
-build: off
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
+    artifact: dist\*
+    draft: true
+    prerelease: false
+    on:
+      appveyor_repo_tag: true
