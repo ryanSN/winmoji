@@ -1595,13 +1595,13 @@ debug@2.6.1:
   dependencies:
     ms "0.7.2"
 
-debug@2.6.3, debug@^2.1.1:
+debug@2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.3.tgz#0f7eb8c30965ec08c72accfa0130c8b79984141d"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.8, debug@^2.1.3, debug@^2.2.0, debug@^2.6.1, debug@^2.6.3, debug@^2.6.6:
+debug@2.6.8, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.6.1, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -1756,6 +1756,13 @@ electron-builder-http@~16.6.0:
     debug "2.6.3"
     fs-extra-p "^4.1.0"
 
+electron-builder-http@~17.9.0:
+  version "17.9.0"
+  resolved "https://registry.yarnpkg.com/electron-builder-http/-/electron-builder-http-17.9.0.tgz#e760947b86c5dea1fb9a0ceff845cc21e7f881cc"
+  dependencies:
+    debug "2.6.8"
+    fs-extra-p "^4.3.0"
+
 electron-builder-squirrel-windows@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/electron-builder-squirrel-windows/-/electron-builder-squirrel-windows-17.0.1.tgz#2e92dadb588e568d6d2264112b4d08bacfe57565"
@@ -1873,6 +1880,10 @@ electron-is-accelerator@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/electron-is-accelerator/-/electron-is-accelerator-0.1.1.tgz#736af9f96c48948925c0b1b96f821f1e8a589d79"
 
+electron-is-dev@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-0.1.2.tgz#8a1043e32b3a1da1c3f553dce28ce764246167e3"
+
 electron-localshortcut@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/electron-localshortcut/-/electron-localshortcut-2.0.0.tgz#bf088d42812d764c06ae0c9f179cf204d9c90103"
@@ -1901,6 +1912,20 @@ electron-publish@18.3.5:
     electron-builder-util "~18.3.5"
     fs-extra-p "^4.3.0"
     mime "^1.3.6"
+
+electron-updater@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/electron-updater/-/electron-updater-1.16.0.tgz#e81e6a428d16d244e474a884302b5fcfad927230"
+  dependencies:
+    bluebird-lst "^1.0.2"
+    debug "^2.6.8"
+    electron-builder-http "~17.9.0"
+    electron-is-dev "^0.1.2"
+    fs-extra-p "^4.3.0"
+    js-yaml "^3.8.4"
+    semver "^5.3.0"
+    source-map-support "^0.4.15"
+    xelement "^1.0.14"
 
 electron@^1.6.2:
   version "1.6.5"
@@ -4960,15 +4985,9 @@ source-list-map@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-1.1.1.tgz#1a33ac210ca144d1e561f906ebccab5669ff4cb4"
 
-source-map-support@^0.4.14, source-map-support@^0.4.15:
+source-map-support@^0.4.14, source-map-support@^0.4.15, source-map-support@^0.4.2:
   version "0.4.15"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.15.tgz#03202df65c06d2bd8c7ec2362a193056fef8d3b1"
-  dependencies:
-    source-map "^0.5.6"
-
-source-map-support@^0.4.2:
-  version "0.4.14"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.14.tgz#9d4463772598b86271b4f523f6c1f4e02a7d6aef"
   dependencies:
     source-map "^0.5.6"
 
@@ -5061,7 +5080,7 @@ standard-engine@~7.0.0:
     minimist "^1.1.0"
     pkg-conf "^2.0.0"
 
-standard@^10.0.0:
+standard@^10.0.2:
   version "10.0.2"
   resolved "https://registry.yarnpkg.com/standard/-/standard-10.0.2.tgz#974c1c53cc865b075a4b576e78441e1695daaf7b"
   dependencies:
@@ -5709,6 +5728,12 @@ write@^0.2.1:
 xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
+
+xelement@^1.0.14:
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/xelement/-/xelement-1.0.14.tgz#46eb00ea6f5e4db9c18d6f05bcd08dc9ebeff8c0"
+  dependencies:
+    sax "^1.2.1"
 
 xml-name-validator@^2.0.1:
   version "2.0.1"

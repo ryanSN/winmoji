@@ -44,7 +44,6 @@ build_script:
   - yarn coverage
   - yarn release
 
-
 deploy:
   - provider: GitHub
     auth_token:
