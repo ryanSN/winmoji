@@ -30,13 +30,12 @@ test_script:
   - yarn --version
   - yarn
   - yarn coverage
-#   - yarn test
 
 artifacts:
   - path: dist\*
 
 build_script:
-  - yarn release
+  - yarn make:install
 
 deploy:
   - provider: GitHub
