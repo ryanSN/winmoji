@@ -6,6 +6,8 @@ init:
 
 environment:
   nodejs_version: "7.4.0"
+  GH_TOKEN:
+      secure: 4aEqyk52NGufQrXiG9ONP/F2BpLvfeaRE+uGYPrrftf3sN60Bagb951EVHXnMIka
 
 cache:
   - node_modules -> package.json
