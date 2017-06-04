@@ -32,9 +32,6 @@ test_script:
 artifacts:
   - path: dist\*
 
-build_script:
-  - yarn make:install
-
 deploy:
   - provider: GitHub
     auth_token:
@@ -44,3 +41,5 @@ deploy:
     prerelease: false
     on:
       appveyor_repo_tag: true
+
+build: off
