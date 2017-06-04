@@ -9,6 +9,8 @@ init:
 
 environment:
   nodejs_version: "7.4.0"
+  GH_TOKEN:
+    secure: lbTBOM5qMTqpAAp/tMEHULcIpDNLAC+pGV3hIvBZdj0BUQdCrVmrD1kY+j05e42/
 
 cache:
   - node_modules -> package.json
@@ -20,6 +22,15 @@ install:
   - yarn install
   - yarn add electron-builder@next --dev # force install next version to test electron-builder
 
+
+- branches:
+    only:
+      - master
+    build_script:
+      - yarn make:install
+    artifacts:
+      - path: dist\*
+
 # "test pipe"
 test_script:
   - node --version
@@ -27,7 +38,5 @@ test_script:
   - yarn
   - yarn coverage
 
-artifacts:
-  - path: dist\*
 
 build: off
