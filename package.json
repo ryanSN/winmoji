@@ -15,7 +15,8 @@
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
     "make:install": "rm -rf dist && yarn compile && build --win --x64",
-    "release": "rm -rf dist && yarn compile && build --win --x64 -p always"
+    "release": "yarn make:install",
+    "makerelease": "rm -rf dist && yarn compile && build --win --x64 -p always"
   },
   "dependencies": {
     "electron-config": "^1.0.0",
