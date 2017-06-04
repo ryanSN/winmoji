@@ -1,4 +1,4 @@
-## winMoji  [v1.1.0](https://github.com/ryanSN/winmoji/releases)
+## winMoji
 
 <div align="center">
   <h1>
