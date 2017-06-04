@@ -1,6 +1,11 @@
-const {app, BrowserWindow, globalShortcut} = require('electron')
+const {app,
+  BrowserWindow,
+  globalShortcut
+} = require('electron')
+const isDev = require('electron-is-dev')
 const path = require('path')
 const tray = require('./tray')
+const updater = require('./updater')
 const Store = require('electron-config')
 const store = new Store({
   configName: 'user-perferences',
@@ -59,7 +64,12 @@ app.on('will-quit', () => {
   globalShortcut.unregisterAll()
 })
 
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createWindow()
+  if (!isDev) {
+    updater.checkForUpdates()
+  }
+})
 
 app.on('activate', () => {
   mainWindow.show()

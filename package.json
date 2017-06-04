@@ -15,11 +15,14 @@
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
     "make:install": "rm -rf dist && yarn compile && build --win --x64",
-    "release": "yarn make:install"
+    "release": "yarn make:install",
+    "makerelease": "rm -rf dist && yarn compile && build --win --x64 -p always"
   },
   "dependencies": {
     "electron-config": "^1.0.0",
+    "electron-is-dev": "^0.1.2",
     "electron-localshortcut": "^2.0.0",
+    "electron-updater": "^1.16.0",
     "emojilib": "^2.2.0",
     "fast-levenshtein": "^2.0.6",
     "react": "^15.4.2",
@@ -39,7 +42,7 @@
     "jest": "^20.0.3",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^15.4.2",
-    "standard": "^10.0.0",
+    "standard": "^10.0.2",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   },
@@ -89,7 +92,14 @@
     },
     "directories": {
       "buildResources": "build"
-    }
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ryanSN",
+        "repo": "winMoji"
+      }
+    ]
   },
   "engines": {
     "node": ">= 7.4.0"
