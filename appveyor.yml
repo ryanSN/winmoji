@@ -23,13 +23,9 @@ install:
   - yarn add electron-builder@next --dev # force install next version to test electron-builder
 
 
-- branches:
-    only:
-      - master
-    build_script:
-      - yarn make:install
-    artifacts:
-      - path: dist\*
+branches:
+  only:
+    - master
 
 # "test pipe"
 test_script:
@@ -38,5 +34,7 @@ test_script:
   - yarn
   - yarn coverage
 
-
-build: off
+build_script:
+  - yarn make:install
+artifacts:
+  - path: dist\*
