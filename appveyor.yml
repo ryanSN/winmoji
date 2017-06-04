@@ -9,8 +9,6 @@ init:
 
 environment:
   nodejs_version: "7.4.0"
-  GH_TOKEN:
-      secure: 4aEqyk52NGufQrXiG9ONP/F2BpLvfeaRE+uGYPrrftf3sN60Bagb951EVHXnMIka
 
 cache:
   - node_modules -> package.json
@@ -31,15 +29,5 @@ test_script:
 
 artifacts:
   - path: dist\*
-
-deploy:
-  - provider: GitHub
-    auth_token:
-      secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
-    artifact: dist\*
-    draft: true
-    prerelease: false
-    on:
-      appveyor_repo_tag: true
 
 build: off
