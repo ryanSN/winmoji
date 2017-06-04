@@ -4,13 +4,18 @@ version: "{build}"
 platform:
   - x64
 
+# Fix line endings on Windows
 init:
   - git config --global core.autocrlf input
 
 environment:
-  nodejs_version: "7.4.0"
+  matrix:
+    - nodejs_version: "7.4.0"
   GH_TOKEN:
     secure: lbTBOM5qMTqpAAp/tMEHULcIpDNLAC+pGV3hIvBZdj0BUQdCrVmrD1kY+j05e42/
+
+matrix:
+  fast_finish: true
 
 cache:
   - node_modules -> package.json
@@ -31,6 +36,7 @@ test_script:
   - yarn --version
   - yarn
   - yarn coverage
+  - yarn make:install
 
 # deploy:
 #   - provider: GitHub
