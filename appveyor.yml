@@ -32,15 +32,14 @@ test_script:
   - yarn
   - yarn coverage
 
-deploy:
-  - provider: GitHub
-    auth_token:
-      secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
-    artifact: dist\*
-    draft: true
-    prerelease: false
-    on:
-      appveyor_repo_tag: true
-      branch: master
-before_deploy:
-  - yarn make:install
+# deploy:
+#   - provider: GitHub
+#     auth_token:
+#       secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
+#     artifact: dist\*
+#     draft: true
+#     prerelease: false
+#     on:
+#       appveyor_repo_tag: true
+
+build: off
