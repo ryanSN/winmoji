@@ -29,7 +29,6 @@ test_script:
   - node --version
   - yarn --version
   - yarn
-  - yarn test
   - yarn coverage
 #   - yarn test
 
