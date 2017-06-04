@@ -25,10 +25,12 @@ install:
   - yarn add electron-builder@next --dev # force install next version to test electron-builder
 
 # "test pipe"
-# test_script:
-#   - node --version
-#   - yarn --version
-#   - yarn
+test_script:
+  - node --version
+  - yarn --version
+  - yarn
+  - yarn test
+  - yarn coverage
 #   - yarn test
 
 artifacts:
@@ -43,13 +45,14 @@ build_script:
   - yarn release
 
 
-# deploy:
-#   - provider: GitHub
-#     auth_token:
-#       secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
-#     artifact: dist\*
-#     draft: true
-#     prerelease: false
-#     on:
-#       appveyor_repo_tag: true
+deploy:
+  - provider: GitHub
+    auth_token:
+      secure: NsZdgUavKmZtXwuqiYcA8DdCNLeHnnExSLZnU7JSGBWosxYu7OrLOlegu8rZUBnV
+    artifact: dist\*
+    draft: true
+    prerelease: false
+    on:
+      appveyor_repo_tag: true
+      branch: master
 build: off
