@@ -25,7 +25,7 @@ cache:
 install:
   - ps: Install-Product node $env:node_version
   - yarn install
-  - yarn add electron-builder@next --dev # force install next version to test electron-builder
+  # - yarn add electron-builder@next --dev # force install next version to test electron-builder
 
 artifacts:
   - path: dist\*
