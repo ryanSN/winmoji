@@ -9,8 +9,7 @@ init:
   - git config --global core.autocrlf input
 
 environment:
-  matrix:
-    - nodejs_version: "7.4.0"
+  - node_version: "7.4.0"
   GH_TOKEN:
     secure: lbTBOM5qMTqpAAp/tMEHULcIpDNLAC+pGV3hIvBZdj0BUQdCrVmrD1kY+j05e42/
 
