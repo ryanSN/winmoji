@@ -1,5 +1,6 @@
 const path = require('path')
 const electron = require('electron')
+const platform = require('os').platform()
 
 const app = electron.app
 let tray = null
@@ -9,7 +10,18 @@ exports.create = win => {
     return
   }
 
-  const iconPath = path.join(__dirname, 'assets/icons/win/icon.ico')
+  let iconPath = null
+  if (platform === 'win32') {
+    iconPath = path.join(__dirname, 'assets/icons/win/icon.ico')
+  } else if (platform === 'darwin') {
+    if (electron.systemPreferences.isDarkMode()) {
+      iconPath = path.join(__dirname, 'assets/icons/mac/trayIcon@2x.png')
+    } else {
+      iconPath = path.join(__dirname, 'assets/icons/mac/trayIcon_light@2x.png')
+    }
+  } else {
+    iconPath = path.join(__dirname, 'assets/icons/png/24x24.png')
+  }
 
   const toggleWindow = () => {
     if (win.isVisible()) {
