@@ -1,7 +1,7 @@
 {
   "name": "winmoji",
   "productName": "winMoji",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Emoji Search for Windows",
   "main": "main.js",
   "author": "ryanSn <chatters@gmail.com>",
@@ -59,7 +59,7 @@
       "it",
       "expect"
     ],
-    "ignore":[
+    "ignore": [
       "__mocks__/**"
     ]
   },
