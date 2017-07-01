@@ -49,6 +49,7 @@ const createWindow = () => {
   globalShortcut.register('CommandOrControl+Shift+E', () => {
     if (!mainWindow.isVisible()) {
       mainWindow.show()
+      mainWindow.webContents.send('window-open')
     } else {
       mainWindow.hide()
     }
@@ -66,6 +67,7 @@ app.on('will-quit', () => {
 
 app.on('ready', () => {
   createWindow()
+  // mainWindow.webContents.openDevTools()
   if (!isDev) {
     updater.checkForUpdates()
   }
@@ -73,6 +75,7 @@ app.on('ready', () => {
 
 app.on('activate', () => {
   mainWindow.show()
+  mainWindow.webContents.send('window-open')
 })
 
 app.on('before-quit', () => {

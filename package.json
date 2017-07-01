@@ -58,6 +58,9 @@
       "afterEach",
       "it",
       "expect"
+    ],
+    "ignore":[
+      "__mocks__/**"
     ]
   },
   "jest": {
