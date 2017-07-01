@@ -16,6 +16,7 @@ exports.create = win => {
       win.hide()
     } else {
       win.show()
+      win.webContents.send('window-open')
     }
   }
 

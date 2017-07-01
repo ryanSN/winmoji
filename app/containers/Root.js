@@ -3,7 +3,7 @@ import Search from '../components/Search'
 import Results from '../components/Results'
 import emojilib from 'emojilib'
 import lev from 'fast-levenshtein'
-import {clipboard} from 'electron'
+import {clipboard, ipcRenderer} from 'electron'
 
 const similarity = (() => {
   const mem = {}
@@ -45,6 +45,12 @@ export default class Root extends Component {
     this.onEmojiClick = this.onEmojiClick.bind(this)
   }
 
+  componentDidMount () {
+    ipcRenderer.on('window-open', (event, message) => {
+      this.inputSearch.focus()
+    })
+  }
+
   onChange (event) {
     this.setState({search: event.target.value})
   }
@@ -58,7 +64,7 @@ export default class Root extends Component {
 
     return (
       <div>
-        <Search onChange={this.onChange} />
+        <Search onChange={this.onChange} inputRef={(input) => { this.inputSearch = input }} />
         <div className='results'>
           <Results
             filteredContent={emojis}
