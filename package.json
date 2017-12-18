@@ -38,7 +38,7 @@
     "coveralls": "^3.0.0",
     "electron": "^1.6.2",
     "electron-builder": "^19.4.0",
-    "jest": "^21.0.1",
+    "jest": "^22.0.0",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.0.0",
     "standard": "^10.0.2",
