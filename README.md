@@ -6,8 +6,9 @@
   </h1>
 </div>
 
-[![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
 [![Build status](https://ci.appveyor.com/api/projects/status/jb7laepqr55yy8gc?svg=true)](https://ci.appveyor.com/project/ryanSN/winmoji)
+[![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
+[![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
 [![Known Vulnerabilities](https://snyk.io/test/github/ryanSN/winmoji/badge.svg)](https://snyk.io/test/github/ryanSN/winmoji)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ryanSN/winmoji.svg)](https://greenkeeper.io/)
 
