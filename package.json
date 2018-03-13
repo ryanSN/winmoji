@@ -11,7 +11,7 @@
     "test": "standard && jest",
     "coverage": "yarn && jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
     "start": "yarn && yarn compile && electron main.js",
-    "compile": "./node_modules/.bin/webpack",
+    "compile": "./node_modules/.bin/webpack --mode=production",
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
     "make:install": "rm -rf dist && yarn compile && build --win --x64",
@@ -29,12 +29,11 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-jest": "^22.0.0",
-    "babel-loader": "^7.0.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-react": "^6.23.0",
-    "babel-preset-stage-2": "^6.22.0",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.0",
     "electron": "^1.6.2",
     "electron-builder": "^20.0.5",
@@ -42,8 +41,9 @@
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.0.0",
     "standard": "^11.0.0",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.1"
   },
   "pre-commit": [
     "lint"
