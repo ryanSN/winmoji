@@ -1,4 +1,4 @@
-const {dialog} = require('electron')
+const { dialog } = require('electron')
 const { autoUpdater } = require('electron-updater')
 
 autoUpdater.on('error', (ev, err) => {
