@@ -20,9 +20,9 @@
   },
   "dependencies": {
     "electron-config": "^1.0.0",
-    "electron-is-dev": "^0.3.0",
+    "electron-is-dev": "^1.0.1",
     "electron-localshortcut": "^3.0.4",
-    "electron-updater": "^2.18.2",
+    "electron-updater": "^3.0.1",
     "emojilib": "^2.2.0",
     "fast-levenshtein": "^2.0.6",
     "react": "^16.0.0",
@@ -34,7 +34,7 @@
     "@babel/preset-env": "^7.0.0-beta.40",
     "@babel/preset-react": "^7.0.0-beta.40",
     "babel-core": "^7.0.0-0",
-    "babel-jest": "^22.4.1",
+    "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.0",
     "electron": "^2.0.0",
@@ -42,9 +42,9 @@
     "jest": "^22.4.2",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.0.0",
-    "standard": "^11.0.0",
+    "standard": "^12.0.0",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11",
+    "webpack-cli": "^3.0.0",
     "webpack-dev-server": "^3.1.1"
   },
   "pre-commit": [
@@ -109,6 +109,6 @@
     ]
   },
   "engines": {
-    "node": ">= 8.9.0"
+    "node": ">= 8.11.4"
   }
 }
