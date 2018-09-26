@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Search from '../components/Search'
 import Results from '../components/Results'
 import emojilib from 'emojilib'
 import lev from 'fast-levenshtein'
-import {clipboard, ipcRenderer} from 'electron'
+import { clipboard, ipcRenderer } from 'electron'
 
 const similarity = (() => {
   const mem = {}
@@ -23,11 +23,11 @@ const emojiList = (search) => {
     .map(([name, details]) => {
       const searchSim = similarity(search)
       const sims = [searchSim(name)].concat(details.keywords.map(searchSim))
-      return {name, sim: Math.max.apply(null, sims)}
+      return { name, sim: Math.max.apply(null, sims) }
     })
-    .filter(({name, sim}) => sim >= 0.5)
+    .filter(({ name, sim }) => sim >= 0.5)
     .sort((a, b) => b.sim - a.sim)
-    .map(({name}) => emojilib.lib[name])
+    .map(({ name }) => emojilib.lib[name])
 
   return emojis.length === 0
     ? Object.values(emojilib.lib)
@@ -52,7 +52,7 @@ export default class Root extends Component {
   }
 
   onChange (event) {
-    this.setState({search: event.target.value})
+    this.setState({ search: event.target.value })
   }
 
   onEmojiClick (e, emoji) {

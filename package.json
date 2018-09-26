@@ -1,7 +1,7 @@
 {
   "name": "winmoji",
   "productName": "winMoji",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Emoji Search for Windows",
   "main": "main.js",
   "author": "ryanSn <chatters@gmail.com>",
@@ -22,7 +22,7 @@
     "electron-config": "^1.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-localshortcut": "^3.0.4",
-    "electron-updater": "^3.0.1",
+    "electron-updater": "^3.0.3",
     "emojilib": "^2.2.0",
     "fast-levenshtein": "^2.0.6",
     "react": "^16.0.0",
@@ -37,7 +37,7 @@
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.0",
-    "electron": "^2.0.0",
+    "electron": "^3.0.0",
     "electron-builder": "^20.0.5",
     "jest": "^22.4.2",
     "pre-commit": "^1.2.2",
@@ -66,6 +66,7 @@
     ]
   },
   "jest": {
+    "testURL": "http://localhost/",
     "collectCoverage": true,
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",

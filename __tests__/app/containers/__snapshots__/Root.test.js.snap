@@ -295,6 +295,39 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🤪
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤨
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧐
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           😝
         </a>
       </li>
@@ -340,6 +373,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           😎
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤩
         </a>
       </li>
       <li
@@ -461,6 +505,50 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🤥
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤭
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤫
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤬
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤯
         </a>
       </li>
       <li
@@ -823,6 +911,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🤮
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           😷
         </a>
       </li>
@@ -1066,6 +1165,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           😾
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤲
         </a>
       </li>
       <li
@@ -1351,6 +1461,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🤟
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🤘
         </a>
       </li>
@@ -1483,6 +1604,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧠
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           👤
         </a>
       </li>
@@ -1527,6 +1659,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧒
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           👦
         </a>
       </li>
@@ -1539,6 +1682,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           👧
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧑
         </a>
       </li>
       <li
@@ -1593,6 +1747,28 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧔
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧓
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           👴
         </a>
       </li>
@@ -1616,6 +1792,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           👲
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧕
         </a>
       </li>
       <li
@@ -2110,6 +2297,160 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧙‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧙‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧝‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧝‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧛‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧛‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧟‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧟‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧞‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧞‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧜‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧜‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧚‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧚‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           👼
         </a>
       </li>
@@ -2122,6 +2463,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🤰
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🤱
         </a>
       </li>
       <li
@@ -2539,6 +2891,28 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧖‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧖‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           💑
         </a>
       </li>
@@ -2880,6 +3254,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧥
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           👚
         </a>
       </li>
@@ -3045,6 +3430,39 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧦
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧤
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧣
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           👒
         </a>
       </li>
@@ -3057,6 +3475,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🎩
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧢
         </a>
       </li>
       <li
@@ -3683,6 +4112,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🦗
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🕷
         </a>
       </li>
@@ -3728,6 +4168,28 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🦎
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🦖
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🦕
         </a>
       </li>
       <li
@@ -3848,6 +4310,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🦓
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🐅
         </a>
       </li>
@@ -3915,6 +4388,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🐫
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🦒
         </a>
       </li>
       <li
@@ -4102,6 +4586,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🐿
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🦔
         </a>
       </li>
       <li
@@ -5113,6 +5608,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🥥
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🥝
         </a>
       </li>
@@ -5125,6 +5631,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🥑
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥦
         </a>
       </li>
       <li
@@ -5278,6 +5795,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🥨
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🧀
         </a>
       </li>
@@ -5301,6 +5829,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🥓
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥩
         </a>
       </li>
       <li
@@ -5421,6 +5960,28 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🥪
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥫
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🍝
         </a>
       </li>
@@ -5499,6 +6060,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🍥
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥠
         </a>
       </li>
       <li
@@ -5630,6 +6202,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🥧
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🍰
         </a>
       </li>
@@ -5697,6 +6280,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🍿
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥟
         </a>
       </li>
       <li
@@ -5850,6 +6444,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🥤
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           ☕
         </a>
       </li>
@@ -5895,6 +6500,39 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🍽
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥣
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥡
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🥢
         </a>
       </li>
       <li
@@ -6213,6 +6851,28 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🥌
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🛷
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🏹
         </a>
       </li>
@@ -6279,6 +6939,28 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧗‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧗‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🏊‍♀️
         </a>
       </li>
@@ -6313,6 +6995,28 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🤽‍♂️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧘‍♀️
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🧘‍♂️
         </a>
       </li>
       <li
@@ -7215,6 +7919,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           🚉
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🛸
         </a>
       </li>
       <li
@@ -10107,6 +10822,17 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🧡
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           💛
         </a>
       </li>
@@ -11692,6 +12418,17 @@ exports[`app should render the base app 1`] = `
           onClick={[Function]}
         >
           *⃣
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          ⏏️
         </a>
       </li>
       <li
@@ -15629,6 +16366,39 @@ exports[`app should render the base app 1`] = `
           href="#"
           onClick={[Function]}
         >
+          🏴󠁧󠁢󠁥󠁮󠁧󠁿
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🏴󠁧󠁢󠁳󠁣󠁴󠁿
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
+          🏴󠁧󠁢󠁷󠁬󠁳󠁿
+        </a>
+      </li>
+      <li
+        className="results__item"
+      >
+        <a
+          className="results__link"
+          href="#"
+          onClick={[Function]}
+        >
           🇺🇸
         </a>
       </li>
@@ -15763,141 +16533,6 @@ exports[`app should render the base app 1`] = `
         >
           🇿🇼
         </a>
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
-      </li>
-      <li
-        className="results__item"
-      >
-        <a
-          className="results__link"
-          href="#"
-          onClick={[Function]}
-        />
       </li>
     </ul>
   </div>
