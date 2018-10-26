@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = ({onChange, inputRef}) => {
+const Search = ({ onChange, inputRef }) => {
   return (
     <input type='text'
       autoFocus

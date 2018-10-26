@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Results = ({filteredContent, onEmojiClick}) => {
+const Results = ({ filteredContent, onEmojiClick }) => {
   return (
     <ul>
       {

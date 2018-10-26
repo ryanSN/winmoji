@@ -1,4 +1,4 @@
-const {app,
+const { app,
   BrowserWindow,
   globalShortcut
 } = require('electron')
@@ -56,29 +56,42 @@ const createWindow = () => {
   })
 }
 
-app.on('will-quit', () => {
-  // clean up after ourselves
-  // Unregister a shortcut.
-  globalShortcut.unregister('CommandOrControl+X')
+const lockSingleInstance = app.requestSingleInstanceLock()
 
-  // Unregister all shortcuts.
-  globalShortcut.unregisterAll()
-})
+if (!lockSingleInstance) {
+  app.quit()
+} else {
+  app.on('second-instance', (event, commandLink, workingDirectory) => {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
 
-app.on('ready', () => {
-  createWindow()
-  // mainWindow.webContents.openDevTools()
-  if (!isDev) {
-    updater.checkForUpdates()
-  }
-})
+  app.on('will-quit', () => {
+    // clean up after ourselves
+    // Unregister a shortcut.
+    globalShortcut.unregister('CommandOrControl+X')
 
-app.on('activate', () => {
-  mainWindow.show()
-  mainWindow.webContents.send('window-open')
-})
+    // Unregister all shortcuts.
+    globalShortcut.unregisterAll()
+  })
 
-app.on('before-quit', () => {
-  isQuitting = true
-  console.log(!mainWindow.isFullScreen())
-})
+  app.on('ready', () => {
+    createWindow()
+    // mainWindow.webContents.openDevTools()
+    if (!isDev) {
+      updater.checkForUpdates()
+    }
+  })
+
+  app.on('activate', () => {
+    mainWindow.show()
+    mainWindow.webContents.send('window-open')
+  })
+
+  app.on('before-quit', () => {
+    isQuitting = true
+    console.log(!mainWindow.isFullScreen())
+  })
+}
