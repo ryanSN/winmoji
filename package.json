@@ -19,7 +19,7 @@
     "makerelease": "rm -rf dist && yarn compile && build --win --x64 -p always"
   },
   "dependencies": {
-    "electron-config": "^1.0.0",
+    "electron-config": "^2.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-localshortcut": "^3.0.4",
     "electron-updater": "^3.0.3",
