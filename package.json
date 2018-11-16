@@ -22,7 +22,7 @@
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-localshortcut": "^3.0.4",
-    "electron-updater": "^3.2.0",
+    "electron-updater": "^4.0.1",
     "emojilib": "^2.2.0",
     "fast-levenshtein": "^2.0.6",
     "react": "^16.0.0",
