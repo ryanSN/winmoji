@@ -25,8 +25,8 @@
     "electron-updater": "^4.0.1",
     "emojilib": "^2.4.0",
     "fast-levenshtein": "^2.0.6",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.40",
@@ -41,7 +41,7 @@
     "electron-builder": "^20.33.2",
     "jest": "^22.4.2",
     "pre-commit": "^1.2.2",
-    "react-test-renderer": "^16.0.0",
+    "react-test-renderer": "^16.6.3",
     "standard": "^12.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^3.0.0",
