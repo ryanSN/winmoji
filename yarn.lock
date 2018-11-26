@@ -1455,9 +1455,19 @@ buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-builder-util-runtime@7.1.0, builder-util-runtime@^7.1.0, builder-util-runtime@~7.1.0:
+builder-util-runtime@7.1.0, builder-util-runtime@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/builder-util-runtime/-/builder-util-runtime-7.1.0.tgz#f0bf1f247d0eb79ea8a20d0c9178ffa0daf98a80"
+  dependencies:
+    bluebird-lst "^1.0.6"
+    debug "^4.1.0"
+    fs-extra-p "^7.0.0"
+    sax "^1.2.4"
+
+builder-util-runtime@~8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/builder-util-runtime/-/builder-util-runtime-8.0.2.tgz#9d638a266ca3aa25ced1cff4df74c8fd97dd78cf"
+  integrity sha512-46AjyMQ1/yBvGnXWmqNGlg8te7jCPCs7TJ0zDC2+4vV/t5iZp2dR1H9UfVpcBxlvBq3dlAOmwb9fz1d9xZN1+Q==
   dependencies:
     bluebird-lst "^1.0.6"
     debug "^4.1.0"
@@ -2300,10 +2310,6 @@ electron-is-accelerator@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/electron-is-accelerator/-/electron-is-accelerator-0.1.2.tgz#509e510c26a56b55e17f863a4b04e111846ab27b"
 
-electron-is-dev@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-0.3.0.tgz#14e6fda5c68e9e4ecbeff9ccf037cbd7c05c5afe"
-
 electron-is-dev@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/electron-is-dev/-/electron-is-dev-1.0.1.tgz#6e0a184736fe7aea77d18210b0b0f6a02402c4bc"
@@ -2344,13 +2350,13 @@ electron-to-chromium@^1.3.62:
   version "1.3.70"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.70.tgz#ded377256d92d81b4257d36c65aa890274afcfd2"
 
-electron-updater@^3.2.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/electron-updater/-/electron-updater-3.2.2.tgz#e1115c29fffd0e4bc344252e5600a4d3c0403c9f"
+electron-updater@^4.0.1:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/electron-updater/-/electron-updater-4.0.4.tgz#d6a8a7a36cfe2882c8c0ae9ac4056ccf1a96eee9"
+  integrity sha512-y3wddJQyC5h1UTJhNAWoX4McJ5Z1r1ZDqyifpYWniVS286YCXe1xSLkbe9C6ZzxzPurt1jg2ZubPuBNt/811Dw==
   dependencies:
     bluebird-lst "^1.0.6"
-    builder-util-runtime "~7.1.0"
-    electron-is-dev "^0.3.0"
+    builder-util-runtime "~8.0.2"
     fs-extra-p "^7.0.0"
     js-yaml "^3.12.0"
     lazy-val "^1.0.3"
@@ -2379,9 +2385,10 @@ elliptic@^6.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-emojilib@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/emojilib/-/emojilib-2.3.0.tgz#1e6f922c4881bf56c915b9a1d97397e8d4ac7094"
+emojilib@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/emojilib/-/emojilib-2.4.0.tgz#ac518a8bb0d5f76dda57289ccb2fdf9d39ae721e"
+  integrity sha512-5U0rVMU5Y2n2+ykNLQqMoqklN9ICBT/KsvC1Gz6vqHbz2AXXGkG+Pm5rMWk/8Vjrr/mY9985Hi8DYzn1F09Nyw==
 
 emojis-list@^2.0.0:
   version "2.1.0"
