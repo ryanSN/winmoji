@@ -89,7 +89,7 @@
   },
   "build": {
     "appId": "com.rchatters.winmoji",
-    "copyright": "Copyright (c) 2017 rchatters",
+    "copyright": "Copyright (c) 2018 rchatters",
     "productName": "winMoji",
     "win": {
       "target": "nsis",
@@ -110,6 +110,6 @@
     ]
   },
   "engines": {
-    "node": ">= 8.11.4"
+    "node": ">= 8.12.0"
   }
 }
