@@ -19,14 +19,14 @@
     "makerelease": "rm -rf dist && yarn compile && build --win --x64 -p always"
   },
   "dependencies": {
-    "electron-config": "^1.0.0",
+    "electron-config": "^2.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-localshortcut": "^3.0.4",
-    "electron-updater": "^3.0.3",
-    "emojilib": "^2.2.0",
+    "electron-updater": "^4.0.1",
+    "emojilib": "^2.4.0",
     "fast-levenshtein": "^2.0.6",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.40",
@@ -38,10 +38,10 @@
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.0",
     "electron": "^3.0.0",
-    "electron-builder": "^20.0.5",
+    "electron-builder": "^20.33.2",
     "jest": "^22.4.2",
     "pre-commit": "^1.2.2",
-    "react-test-renderer": "^16.0.0",
+    "react-test-renderer": "^16.6.3",
     "standard": "^12.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^3.0.0",
@@ -89,7 +89,7 @@
   },
   "build": {
     "appId": "com.rchatters.winmoji",
-    "copyright": "Copyright (c) 2017 rchatters",
+    "copyright": "Copyright (c) 2018 rchatters",
     "productName": "winMoji",
     "win": {
       "target": "nsis",
@@ -110,6 +110,6 @@
     ]
   },
   "engines": {
-    "node": ">= 8.11.4"
+    "node": ">= 8.12.0"
   }
 }
