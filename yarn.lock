@@ -589,9 +589,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@types/node@^8.0.24":
-  version "8.10.30"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.30.tgz#2c82cbed5f79d72280c131d2acffa88fbd8dd353"
+"@types/node@^10.12.18":
+  version "10.14.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.14.5.tgz#27733a949f5d9972d87109297cffb62207ace70f"
+  integrity sha512-Ja7d4s0qyGFxjGeDq5S7Si25OFibSAHUi6i17UWnwNnpitADN7hah9q0Tl25gxuV5R1u2Bx+np6w4LHXfHyj/g==
 
 "@webassemblyjs/ast@1.7.8":
   version "1.7.8"
@@ -2365,12 +2366,12 @@ electron-updater@^4.0.1:
     semver "^5.6.0"
     source-map-support "^0.5.9"
 
-electron@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-4.0.0.tgz#6ccb40cc8bf2d49954dcea73b97ae7ad12ee04b3"
-  integrity sha512-3XPG/3IXlvnT1oe1K6zEushoD0SKbP8xwdrL10EWGe6k2iOV4hSHqJ8vWnR8yZ7VbSXmBRfomEFDNAo/q/cwKw==
+electron@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-5.0.0.tgz#d8352e2c9625b3be0112ce0c1bf5c9b6f692557e"
+  integrity sha512-++emIe4vLihiYiAVL+E8DT5vSNVFEIuQCRxA+VfpDRVBcog85UB28vi4ogRmMOK3UffzKdWV6e1jqp3T0KpBoA==
   dependencies:
-    "@types/node" "^8.0.24"
+    "@types/node" "^10.12.18"
     electron-download "^4.1.0"
     extract-zip "^1.0.3"
 
