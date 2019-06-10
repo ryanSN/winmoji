@@ -30,7 +30,10 @@ const createWindow = () => {
     'max-width': 280,
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     x,
-    y
+    y,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   mainWindow.loadURL(mainPage)
   mainWindow.setMenu(null)
