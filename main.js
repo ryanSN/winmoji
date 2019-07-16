@@ -66,7 +66,7 @@ if (!lockSingleInstance) {
 } else {
   app.on('second-instance', (event, commandLink, workingDirectory) => {
     if (mainWindow) {
-      if (mainWindow.isMinimized()) mainWindow.restore()
+      if (mainWindow.isVisible()) mainWindow.restore()
       mainWindow.focus()
     }
   })
@@ -74,7 +74,7 @@ if (!lockSingleInstance) {
   app.on('will-quit', () => {
     // clean up after ourselves
     // Unregister a shortcut.
-    globalShortcut.unregister('CommandOrControl+X')
+    globalShortcut.unregister('CommandOrControl+Shift+E')
 
     // Unregister all shortcuts.
     globalShortcut.unregisterAll()
