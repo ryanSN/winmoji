@@ -1,7 +1,4 @@
-const { app,
-  BrowserWindow,
-  globalShortcut
-} = require('electron')
+const { app, BrowserWindow, globalShortcut } = require('electron')
 const isDev = require('electron-is-dev')
 const path = require('path')
 const tray = require('./tray')
@@ -21,7 +18,7 @@ let mainWindow
 let isQuitting = false
 
 const createWindow = () => {
-  let { x, y } = store.get('windowBounds')
+  const { x, y } = store.get('windowBounds')
   mainWindow = new BrowserWindow({
     width: 280,
     height: 400,
@@ -43,7 +40,7 @@ const createWindow = () => {
     if (!isQuitting) {
       e.preventDefault()
       mainWindow.hide()
-      let { x, y } = mainWindow.getBounds()
+      const { x, y } = mainWindow.getBounds()
       store.set('windowBounds', { x, y })
     }
   })
@@ -66,7 +63,7 @@ if (!lockSingleInstance) {
 } else {
   app.on('second-instance', (event, commandLink, workingDirectory) => {
     if (mainWindow) {
-      if (mainWindow.isVisible()) mainWindow.restore()
+      if (!mainWindow.isVisible()) mainWindow.restore()
       mainWindow.focus()
     }
   })
