@@ -1,7 +1,7 @@
 {
   "name": "winmoji",
   "productName": "winMoji",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Emoji Search for Windows",
   "main": "main.js",
   "author": "ryanSn <chatters@gmail.com>",
@@ -14,15 +14,15 @@
     "compile": "./node_modules/.bin/webpack --mode=production",
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
-    "make:install": "rm -rf dist && yarn compile && build --win --x64",
+    "make:install": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builder build --win --x64",
     "release": "yarn make:install",
-    "makerelease": "rm -rf dist && yarn compile && build --win --x64 -p always"
+    "makerelease": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builder build --win --x64 -p always"
   },
   "dependencies": {
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.0.1",
     "electron-localshortcut": "^3.0.4",
-    "electron-updater": "^4.0.1",
+    "electron-updater": "^4.1.2",
     "emojilib": "^2.4.0",
     "fast-levenshtein": "^2.0.6",
     "react": "^16.6.3",
@@ -38,7 +38,7 @@
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.0",
     "electron": "^5.0.0",
-    "electron-builder": "^20.33.2",
+    "electron-builder": "^21.1.0",
     "jest": "^22.4.2",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.6.3",
