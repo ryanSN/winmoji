@@ -63,8 +63,10 @@ if (!lockSingleInstance) {
 } else {
   app.on('second-instance', (event, commandLink, workingDirectory) => {
     if (mainWindow) {
-      if (!mainWindow.isVisible()) mainWindow.restore()
-      mainWindow.focus()
+      if (!mainWindow.isVisible()) {
+        mainWindow.show()
+        mainWindow.webContents.send('window-open')
+      }
     }
   })
 
@@ -79,7 +81,6 @@ if (!lockSingleInstance) {
 
   app.on('ready', () => {
     createWindow()
-    // mainWindow.webContents.openDevTools()
     if (!isDev) {
       updater.checkForUpdates()
     }
@@ -92,6 +93,5 @@ if (!lockSingleInstance) {
 
   app.on('before-quit', () => {
     isQuitting = true
-    console.log(!mainWindow.isFullScreen())
   })
 }
