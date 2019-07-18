@@ -1,6 +1,7 @@
 const path = require('path')
 const electron = require('electron')
 const platform = require('os').platform()
+const windows = require('./app/windows')
 
 const app = electron.app
 let tray = null
@@ -37,6 +38,12 @@ exports.create = win => {
       label: 'Toggle',
       click () {
         toggleWindow()
+      }
+    },
+    {
+      label: 'About',
+      click () {
+        windows.about.init()
       }
     },
     {
