@@ -14,9 +14,9 @@
     "compile": "./node_modules/.bin/webpack --mode=production",
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
-    "make:install": "rm -rf dist && yarn compile && build --win --x64",
+    "make:install": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builder build --win --x64",
     "release": "yarn make:install",
-    "makerelease": "rm -rf dist && yarn compile && build --win --x64 -p always"
+    "makerelease": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builde build --win --x64 -p always"
   },
   "dependencies": {
     "electron-config": "^2.0.0",
