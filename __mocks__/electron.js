@@ -1,8 +1,8 @@
 module.exports = {
-  require: jest.genMockFunction(),
-  match: jest.genMockFunction(),
-  app: jest.genMockFunction(),
-  remote: jest.genMockFunction(),
-  dialog: jest.genMockFunction(),
-  ipcRenderer: { on : jest.fn ()}
+  require: jest.fn(() => value),
+  match: jest.fn(() => value),
+  app: jest.fn(() => value),
+  remote: jest.fn(() => value),
+  dialog: jest.fn(() => value),
+  ipcRenderer: {on: jest.fn()},
 }
