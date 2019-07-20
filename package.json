@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "standard",
-    "test": "standard && NODE_ENV=test jest",
+    "test": "standard && cross-env NODE_ENV=test jest",
     "coverage": "yarn && jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
     "start": "yarn && yarn compile && electron main.js",
     "compile": "./node_modules/.bin/webpack --mode=production",
@@ -37,6 +37,7 @@
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.5",
+    "cross-env": "^5.2.0",
     "electron": "^5.0.0",
     "electron-builder": "^21.1.0",
     "jest": "^24.8.0",
