@@ -37,7 +37,7 @@
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.5",
-    "cross-env": "^5.2.0",
+    "cross-env": "^6.0.0",
     "electron": "^6.0.0",
     "electron-builder": "^21.1.0",
     "jest": "^24.8.0",
