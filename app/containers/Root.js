@@ -41,8 +41,8 @@ export default class Root extends Component {
       search: ''
     }
 
-    this.onChange = this.onChange.bind(this)
-    this.onEmojiClick = this.onEmojiClick.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleOnEmojiClick = this.handleOnEmojiClick.bind(this)
   }
 
   componentDidMount () {
@@ -51,11 +51,11 @@ export default class Root extends Component {
     })
   }
 
-  onChange (event) {
+  handleOnChange (event) {
     this.setState({ search: event.target.value })
   }
 
-  onEmojiClick (e, emoji) {
+  handleOnEmojiClick (e, emoji) {
     clipboard.writeText(emoji.char)
   }
 
@@ -64,11 +64,12 @@ export default class Root extends Component {
 
     return (
       <div>
-        <Search onChange={this.onChange} inputRef={(input) => { this.inputSearch = input }} />
+        <Search onChange={this.handleOnChange} inputRef={(input) => { this.inputSearch = input }} />
         <div className='results'>
           <Results
             filteredContent={emojis}
-            onEmojiClick={this.onEmojiClick} />
+            onEmojiClick={this.handleOnEmojiClick}
+          />
         </div>
       </div>
     )

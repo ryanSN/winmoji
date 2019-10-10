@@ -7,9 +7,11 @@ const Results = ({ filteredContent, onEmojiClick }) => {
         filteredContent.map((emoji, idx) => {
           return (
             <li key={idx} className='results__item'>
-              <a href='#'
+              <a
+                href='#'
                 className='results__link'
-                onClick={() => onEmojiClick(this, emoji)}>
+                onClick={() => onEmojiClick(this, emoji)}
+              >
                 {emoji.char}
               </a>
             </li>
