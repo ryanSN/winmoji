@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Results = ({ filteredContent, onEmojiClick }) => {
+const EmojiList = ({ filteredContent, onEmojiClick }) => {
   return (
     <ul>
       {
@@ -22,4 +22,4 @@ const Results = ({ filteredContent, onEmojiClick }) => {
   )
 }
 
-export default Results
+export default EmojiList
