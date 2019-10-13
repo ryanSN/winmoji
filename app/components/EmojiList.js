@@ -1,15 +1,17 @@
 import React from 'react'
 
-const Results = ({ filteredContent, onEmojiClick }) => {
+const EmojiList = ({ filteredContent, onEmojiClick }) => {
   return (
     <ul>
       {
         filteredContent.map((emoji, idx) => {
           return (
             <li key={idx} className='results__item'>
-              <a href='#'
+              <a
+                href='#'
                 className='results__link'
-                onClick={() => onEmojiClick(this, emoji)}>
+                onClick={() => onEmojiClick(this, emoji)}
+              >
                 {emoji.char}
               </a>
             </li>
@@ -20,4 +22,4 @@ const Results = ({ filteredContent, onEmojiClick }) => {
   )
 }
 
-export default Results
+export default EmojiList

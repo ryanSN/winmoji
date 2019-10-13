@@ -33,7 +33,7 @@ body {
   padding: 8px;
 }
 
-.results {
+.emojis {
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
   max-height: 300px;

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import Search from '../components/Search'
-import Results from '../components/Results'
+import EmojiList from '../components/EmojiList'
 import emojilib from 'emojilib'
 import lev from 'fast-levenshtein'
 import { clipboard, ipcRenderer } from 'electron'
+
+const HISTORY_MAX = 5
+const transformedEmojis = Object.entries(emojilib.lib).map(([name, details]) => ({ ...details, name }))
 
 const similarity = (() => {
   const mem = {}
@@ -19,30 +22,31 @@ const similarity = (() => {
 })()
 
 const emojiList = (search) => {
-  const emojis = Object.entries(emojilib.lib)
-    .map(([name, details]) => {
-      const searchSim = similarity(search)
-      const sims = [searchSim(name)].concat(details.keywords.map(searchSim))
-      return { name, sim: Math.max.apply(null, sims) }
-    })
-    .filter(({ name, sim }) => sim >= 0.5)
+  const emojis = transformedEmojis.map(emoji => {
+    const searchSim = similarity(search)
+    const sims = [searchSim(emoji.name)].concat(emoji.keywords.map(searchSim))
+    return { ...emoji, sim: Math.max.apply(null, sims) }
+  })
+    .filter(({ sim }) => sim >= 0.5)
     .sort((a, b) => b.sim - a.sim)
-    .map(({ name }) => emojilib.lib[name])
+    .map(emoji => {
+      delete emoji.sim
+      return emoji
+    })
 
-  return emojis.length === 0
-    ? Object.values(emojilib.lib)
-    : emojis
+  return emojis.length === 0 ? transformedEmojis : emojis
 }
 
 export default class Root extends Component {
   constructor () {
     super()
     this.state = {
+      recentEmojis: [],
       search: ''
     }
 
-    this.onChange = this.onChange.bind(this)
-    this.onEmojiClick = this.onEmojiClick.bind(this)
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleOnEmojiClick = this.handleOnEmojiClick.bind(this)
   }
 
   componentDidMount () {
@@ -51,24 +55,41 @@ export default class Root extends Component {
     })
   }
 
-  onChange (event) {
+  handleOnChange (event) {
     this.setState({ search: event.target.value })
   }
 
-  onEmojiClick (e, emoji) {
+  handleOnEmojiClick (e, emoji) {
+    const { recentEmojis } = this.state
+    const emojiIndex = recentEmojis.findIndex(({ name }) => emoji.name === name)
+    const recentQueue = emojiIndex >= 0
+      ? [emoji, ...recentEmojis.slice(0, emojiIndex), ...recentEmojis.slice(emojiIndex + 1)]
+      : [emoji, ...recentEmojis.slice(0, HISTORY_MAX - 1)]
+    this.setState({ recentEmojis: recentQueue })
     clipboard.writeText(emoji.char)
   }
 
   render () {
-    const emojis = emojiList(this.state.search.toLowerCase())
+    const searchedEmojis = emojiList(this.state.search.toLowerCase())
+    const { recentEmojis } = this.state
 
     return (
       <div>
-        <Search onChange={this.onChange} inputRef={(input) => { this.inputSearch = input }} />
-        <div className='results'>
-          <Results
-            filteredContent={emojis}
-            onEmojiClick={this.onEmojiClick} />
+        <Search onChange={this.handleOnChange} inputRef={(input) => { this.inputSearch = input }} />
+        <div className='emojis'>
+          {recentEmojis.length > 0 &&
+            <div className='recent'>
+              <EmojiList
+                filteredContent={recentEmojis}
+                onEmojiClick={this.handleOnEmojiClick}
+              />
+            </div>}
+          <div className='results'>
+            <EmojiList
+              filteredContent={searchedEmojis}
+              onEmojiClick={this.handleOnEmojiClick}
+            />
+          </div>
         </div>
       </div>
     )
