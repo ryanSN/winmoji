@@ -44,7 +44,7 @@
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.6.3",
     "standard": "^14.0.0",
-    "webpack": "^4.1.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.0.0",
     "webpack-dev-server": "^3.1.11"
   },
