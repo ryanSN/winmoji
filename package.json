@@ -38,7 +38,7 @@
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.5",
     "cross-env": "^6.0.0",
-    "electron": "^7.0.0",
+    "electron": "^8.0.0",
     "electron-builder": "^22.1.0",
     "jest": "^24.8.0",
     "pre-commit": "^1.2.2",
