@@ -10,7 +10,7 @@
 [![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
 [![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
 [![Known Vulnerabilities](https://snyk.io/test/github/ryanSN/winmoji/badge.svg)](https://snyk.io/test/github/ryanSN/winmoji)
-[![Greenkeeper badge](https://badges.greenkeeper.io/ryanSN/winmoji.svg)](https://greenkeeper.io/)
+
 
 Look up emoji's on windows! It's an alternative solution to using the windows onscreen keyboard or on windows 7 where this keyboard does not exist.
 
