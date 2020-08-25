@@ -3,7 +3,7 @@ const isDev = require('electron-is-dev')
 const path = require('path')
 const tray = require('./tray')
 const updater = require('./updater')
-const Store = require('electron-config')
+const Store = require('electron-store')
 const store = new Store({
   configName: 'user-perferences',
   defaults: {
