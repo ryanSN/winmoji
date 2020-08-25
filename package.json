@@ -19,9 +19,9 @@
     "makerelease": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builder build --win --x64 -p always"
   },
   "dependencies": {
-    "electron-config": "^2.0.0",
     "electron-is-dev": "^1.2.0",
     "electron-localshortcut": "^3.0.4",
+    "electron-store": "^6.0.0",
     "electron-updater": "^4.3.4",
     "emojilib": "^2.4.0",
     "fast-levenshtein": "^2.0.6",
@@ -40,11 +40,11 @@
     "cross-env": "^6.0.0",
     "electron": "^7.2.4",
     "electron-builder": "^22.1.0",
-    "jest": "^24.8.0",
+    "jest": "^26.4.2",
     "pre-commit": "^1.2.2",
     "react-test-renderer": "^16.6.3",
-    "standard": "^14.0.0",
-    "webpack": "^4.41.2",
+    "standard": "^14.3.4",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.0.0",
     "webpack-dev-server": "^3.1.11"
   },
