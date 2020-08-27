@@ -11,17 +11,17 @@
 [![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
 [![Known Vulnerabilities](https://snyk.io/test/github/ryanSN/winmoji/badge.svg)](https://snyk.io/test/github/ryanSN/winmoji)
 
-
 Look up emoji's on windows! It's an alternative solution to using the windows onscreen keyboard or on windows 7 where this keyboard does not exist.
 
 🤓😎😆😐
 
-
 ## Features
+
 Clicking on the emoji saves the emoji to your clipboard to be pasted anywhere you need it.
 Using shortcut `CTRL+SHIFT+E` will toggle winMoji for quick adding of emojis.
 
 ## Download/Install
+
 You can manually download the latest release [here](https://github.com/ryanSN/winmoji/releases)
 
 ## How do I contribute to `winMoji` ?
@@ -43,16 +43,17 @@ $ yarn dev
 ```
 $ yarn release
 ```
+
 **OR**
 
- To package for debug purpose
- ```
- $ yarn pack
- ```
+To package for debug purpose
 
+```
+$ yarn pack
+```
 
- [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
- ## License
+## License
 
- MIT © [Ryan Chatterton](./LICENSE)
+MIT © [Ryan Chatterton](./LICENSE)

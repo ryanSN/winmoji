@@ -7,7 +7,8 @@
   "author": "ryanSn <chatters@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "standard",
+    "prettier": "prettier --write .",
+    "prettier-ci": "prettier --check .",
     "test": "standard && cross-env NODE_ENV=test jest",
     "coverage": "yarn && jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
     "start": "yarn && yarn compile && electron main.js",
@@ -29,12 +30,12 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-0",
-    "babel-jest": "^23.0.1",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.5",
     "cross-env": "^6.0.0",
@@ -42,14 +43,14 @@
     "electron-builder": "^22.1.0",
     "jest": "^26.4.2",
     "pre-commit": "^1.2.2",
+    "prettier": "2.1.1",
     "react-test-renderer": "^16.6.3",
-    "standard": "^14.3.4",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.0.0",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.1.11"
   },
   "pre-commit": [
-    "lint"
+    "prettier-ci"
   ],
   "standard": {
     "globals": [

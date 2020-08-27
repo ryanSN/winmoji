@@ -1,9 +1,9 @@
-const electron = require('electron')
-const path = require('path')
+const electron = require('electron');
+const path = require('path');
 
 const init = () => {
   if (about.win) {
-    return about.win.show()
+    return about.win.show();
   }
 
   const win = (about.win = new electron.BrowserWindow({
@@ -21,28 +21,28 @@ const init = () => {
     useContentSize: true,
     width: 300,
     webPreferences: {
-      nodeIntegration: true
-    }
-  }))
+      nodeIntegration: true,
+    },
+  }));
 
-  win.loadURL(path.join(__dirname, '../static/about.html'))
+  win.loadURL(path.join(__dirname, '../static/about.html'));
 
-  win.setMenu(null)
+  win.setMenu(null);
 
   win.once('ready-to-show', function () {
-    win.show()
-  })
+    win.show();
+  });
 
   win.once('closed', () => {
-    about.win = null
-  })
-}
+    about.win = null;
+  });
+};
 
 const getIconPath = () => {
-  return path.join(__dirname, '../../assets/icons/png/64x64.png')
-}
+  return path.join(__dirname, '../../assets/icons/png/64x64.png');
+};
 
 const about = (module.exports = {
   init,
-  win: null
-})
+  win: null,
+});

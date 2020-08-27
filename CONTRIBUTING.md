@@ -3,6 +3,7 @@
 We welcome contributions. We want to make contributing to this project as easy and transparent as possible.
 
 ## Coding style
+
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 This repo uses the `[standard](https://standardjs.com/)` coding style to maintain consistency.
@@ -18,6 +19,7 @@ We actively welcome your pull requests.
 5. Submitting a Pull requests means you agree to our [Developer Certificate of Origin](#developer-certificate-of-origin-10)
 
 ## Rules
+
 1. All pull requests should be made to the master branch.
 2. Always make sure all the tests are passing before sending a pull request.
 
