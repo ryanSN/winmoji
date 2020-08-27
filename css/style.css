@@ -1,4 +1,6 @@
-* { margin:0; padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 html {
   scroll-behavior: smooth;
@@ -7,26 +9,26 @@ html {
 body {
   color: WindowText;
   background-color: Window;
-  margin:0;
+  margin: 0;
   padding: 0;
   -webkit-user-select: none;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background:#666;
+  background: #666;
 }
 
 .title__bar {
   -webkit-app-region: drag;
-  height:10px;
+  height: 10px;
 }
 
 .title__bar-item {
-  color:#fff;
+  color: #fff;
 }
 
 #app {
@@ -37,20 +39,20 @@ body {
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
   max-height: 300px;
-  width:100%;
+  width: 100%;
 }
 
 .results__item {
-  text-align:center;
+  text-align: center;
 }
 
 .results__link {
   text-decoration: none;
-  display:block;
+  display: block;
   min-width: 40px;
   min-height: 35px;
   padding-top: 8px;
-  font-size:20px;
+  font-size: 20px;
 }
 
 .results__link:hover {
@@ -58,23 +60,23 @@ body {
 }
 
 input {
-  outline:0;
-  -webkit-transition: all .30s;
-  margin-bottom:2px;
-  border:1px solid #bebebe;
+  outline: 0;
+  -webkit-transition: all 0.3s;
+  margin-bottom: 2px;
+  border: 1px solid #bebebe;
   -webkit-box-sizing: border-box;
-  padding:12px;
-  width:100%;
-  font-size:14px;
+  padding: 12px;
+  width: 100%;
+  font-size: 14px;
   border-radius: 3px;
-  background-color:#ddd;
+  background-color: #ddd;
 }
 
 input:focus {
-  outline:none;
+  outline: none;
   border: solid 1px #707070;
   box-shadow: 0 0 5px 1px #969696;
-  background-color:#fff;
+  background-color: #fff;
 }
 
 ul {

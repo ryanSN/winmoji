@@ -4,5 +4,5 @@ module.exports = {
   app: jest.fn(() => value),
   remote: jest.fn(() => value),
   dialog: jest.fn(() => value),
-  ipcRenderer: {on: jest.fn()},
-}
+  ipcRenderer: { on: jest.fn() },
+};

@@ -1,11 +1,11 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   target: 'electron-main',
   entry: './app/app.js',
   output: {
     filename: '[name].bundle.js',
-    path: path.join(__dirname, 'public')
+    path: path.join(__dirname, 'public'),
   },
   module: {
     rules: [
@@ -15,10 +15,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      }
-    ]
-  }
-}
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
+  },
+};

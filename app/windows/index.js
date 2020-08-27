@@ -1,1 +1,1 @@
-exports.about = require('./about')
+exports.about = require('./about');
