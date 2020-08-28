@@ -4,9 +4,7 @@ We welcome contributions. We want to make contributing to this project as easy a
 
 ## Coding style
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
-This repo uses the `[standard](https://standardjs.com/)` coding style to maintain consistency.
+This repo uses the `[prettier](https://prettier.io/)` coding style to maintain consistency.
 
 ## Pull requests
 
@@ -15,7 +13,7 @@ We actively welcome your pull requests.
 1. Fork the repo and create your branch from `master`.
 2. If you've added code that should be tested, add tests
 3. Ensure the test suite passes.
-4. Make sure your code lints (we use `[standard](https://standardjs.com/)`)
+4. Make sure your code lints (we use `[prettier](https://prettier.io/)`)
 5. Submitting a Pull requests means you agree to our [Developer Certificate of Origin](#developer-certificate-of-origin-10)
 
 ## Rules
