@@ -27,8 +27,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Make Pretty
-        run: yarn prettier-ci
+      # - name: Make Pretty
+      #   run: yarn prettier-ci
 
       - name: Test
         run: yarn test
