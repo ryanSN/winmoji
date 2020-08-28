@@ -9,7 +9,7 @@ init:
   - git config --global core.autocrlf input
 
 environment:
-  node_version: '12.18.1'
+  nodejs_version: '12.18.1'
   GH_TOKEN:
     secure: lbTBOM5qMTqpAAp/tMEHULcIpDNLAC+pGV3hIvBZdj0BUQdCrVmrD1kY+j05e42/
 
