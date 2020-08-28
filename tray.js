@@ -15,7 +15,7 @@ exports.create = (win) => {
   if (platform === 'win32') {
     iconPath = path.join(__dirname, 'assets/icons/win/icon.ico');
   } else if (platform === 'darwin') {
-    if (electron.systemPreferences.isDarkMode()) {
+    if (electron.nativeTheme.shouldUseDarkColors) {
       iconPath = path.join(__dirname, 'assets/icons/mac/trayIcon@2x.png');
     } else {
       iconPath = path.join(__dirname, 'assets/icons/mac/trayIcon_light@2x.png');
@@ -55,7 +55,7 @@ exports.create = (win) => {
   ]);
 
   tray = new electron.Tray(iconPath);
-  tray.setToolTip(`${app.getName()}`);
+  tray.setToolTip(`${app.name}`);
   tray.setContextMenu(contextMenu);
   tray.on('click', toggleWindow);
 };
