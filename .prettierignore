@@ -2,6 +2,7 @@
 build
 coverage
 *.bundle.js
+dist
 
 # Ignore all HTML files:
 *.html

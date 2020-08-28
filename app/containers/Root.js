@@ -88,9 +88,12 @@ export default class Root extends Component {
         />
         <div className="emojis">
           {recentEmojis.length > 0 && (
-            <div className="recent">
-              <EmojiList filteredContent={recentEmojis} onEmojiClick={this.handleOnEmojiClick} />
-            </div>
+            <>
+              <span className="recent__title">Recent:</span>
+              <div className="recent">
+                <EmojiList filteredContent={recentEmojis} onEmojiClick={this.handleOnEmojiClick} />
+              </div>
+            </>
           )}
           <div className="results">
             <EmojiList filteredContent={searchedEmojis} onEmojiClick={this.handleOnEmojiClick} />

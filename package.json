@@ -4,7 +4,7 @@
   "version": "2.1.0",
   "description": "Emoji Search for Windows",
   "main": "main.js",
-  "author": "ryanSn <chatters@gmail.com>",
+  "author": "ryanSn <winmoji@rchatter.com>",
   "license": "MIT",
   "scripts": {
     "prettier": "prettier --write .",
