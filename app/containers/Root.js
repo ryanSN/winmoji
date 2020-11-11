@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Search from '../components/Search';
 import EmojiList from '../components/EmojiList';
-import emojilib from 'emojilib';
+import * as winmojilib from 'winmojilib';
 import lev from 'fast-levenshtein';
 import { clipboard, ipcRenderer } from 'electron';
 
 const HISTORY_MAX = 5;
-const transformedEmojis = Object.entries(emojilib.lib).map(([name, details]) => ({
+const transformedEmojis = Object.entries(winmojilib.lib).map(([name, details]) => ({
   ...details,
   name,
 }));
