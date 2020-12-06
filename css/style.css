@@ -4,14 +4,20 @@
 }
 html {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
 }
 
 body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
   color: WindowText;
   background-color: Window;
   margin: 0;
   padding: 0;
   -webkit-user-select: none;
+  height: 100%;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -94,6 +100,7 @@ input:focus {
   margin-top: 5px;
   text-transform: uppercase;
   line-height: 5px;
+  margin-bottom: 5px;
 }
 
 .recent ul {
@@ -102,4 +109,24 @@ input:focus {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 0;
+}
+#about {
+  background-color: #ececec;
+  text-align: center;
+  overflow: hidden;
+  font-size: 16px;
+  -webkit-user-select: none;
+  height: 100%;
+}
+#about img {
+  width: 65px;
+  height: 65px;
+}
+#about h1 {
+  font-size: 0.9em;
+  -webkit-user-select: text;
+}
+#about p {
+  font-size: 0.8em;
+  -webkit-user-select: text;
 }
