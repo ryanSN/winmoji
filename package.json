@@ -1,7 +1,7 @@
 {
   "name": "winmoji",
   "productName": "winMoji",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Emoji Search for Windows",
   "main": "main.js",
   "author": "ryanSn <winmoji@rchatter.com>",
