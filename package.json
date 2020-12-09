@@ -12,12 +12,11 @@
     "test": "cross-env NODE_ENV=test jest",
     "coverage": "yarn && jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
     "start": "yarn && yarn compile && electron main.js",
-    "compile": "./node_modules/.bin/webpack --mode=production",
+    "compile": "webpack --mode=production",
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
-    "make:install": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builder build --win --x64",
-    "release": "yarn make:install",
-    "makerelease": "rm -rf dist && yarn compile && ./node_modules/.bin/electron-builder build --win --x64 -p always"
+    "build:win": "electron-builder --win",
+    "release": "rm -rf dist && yarn compile && electron-builder build --win --publish always"
   },
   "dependencies": {
     "electron-is-dev": "^1.2.0",
@@ -27,6 +26,9 @@
     "fast-levenshtein": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "universal-analytics": "^0.4.23",
+    "uuid": "^8.3.1",
+    "v8-compile-cache": "^2.2.0",
     "winmojilib": "^0.3.1"
   },
   "devDependencies": {
@@ -91,14 +93,32 @@
   },
   "build": {
     "appId": "com.rchatters.winmoji",
-    "copyright": "Copyright (c) 2018 rchatters",
+    "copyright": "Copyright © 2020 rchatters",
     "productName": "winMoji",
     "win": {
-      "target": "nsis",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
       "icon": "assets/icons/win/icon.ico"
     },
+    "portable": {
+      "artifactName": "winMoji-v${version}-portable.${ext}"
+    },
     "nsis": {
-      "oneClick": false
+      "artifactName": "winMoji-v${version}-setup.${ext}"
     },
     "directories": {
       "buildResources": "build"

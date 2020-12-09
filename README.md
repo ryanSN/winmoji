@@ -52,6 +52,10 @@ To package for debug purpose
 $ yarn pack
 ```
 
+## :shield: Privacy
+
+This app has analytics that will track number of users only ([analytics.js](https://github.com/ryansn/winmoji/blob/master/app/helpers/analytics.js)).
+
 ## License
 
 MIT © [Ryan Chatterton](./LICENSE)

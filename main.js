@@ -3,13 +3,10 @@ const isDev = require('electron-is-dev');
 const path = require('path');
 const tray = require('./tray');
 const updater = require('./updater');
-const Store = require('electron-store');
-const store = new Store({
-  configName: 'user-perferences',
-  defaults: {
-    windowBounds: { x: null, y: null },
-  },
-});
+const { activateUser } = require('./app/helpers/analytics');
+const store = require('./app/store');
+
+require('v8-compile-cache');
 
 const mainPage = path.join('file://', __dirname, '/index.html');
 
@@ -94,4 +91,6 @@ if (!lockSingleInstance) {
   app.on('before-quit', () => {
     isQuitting = true;
   });
+
+  activateUser();
 }
