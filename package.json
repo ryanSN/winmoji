@@ -94,7 +94,7 @@
   },
   "build": {
     "appId": "com.rchatters.winmoji",
-    "copyright": "Copyright © 2020 rchatters",
+    "copyright": "Copyright © 2017-2020 ryanSN",
     "productName": "winMoji",
     "win": {
       "target": [
