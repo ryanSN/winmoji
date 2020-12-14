@@ -16,6 +16,7 @@
     "dev": "yarn && yarn compile && electron main.js",
     "pack": "yarn compile && build --dir",
     "build:win": "electron-builder --win",
+    "build:win:ci": "electron-builder --win -p never",
     "release": "rm -rf dist && yarn compile && electron-builder build --win --publish always"
   },
   "dependencies": {
