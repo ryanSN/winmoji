@@ -36,7 +36,7 @@ jobs:
       - name: Build
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: yarn build:win
+        run: yarn build:win:ci
 
       - uses: actions/upload-artifact@v2
         with:
