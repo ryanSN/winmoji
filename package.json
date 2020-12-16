@@ -23,7 +23,7 @@
     "electron-is-dev": "^1.2.0",
     "electron-localshortcut": "^3.0.4",
     "electron-store": "^6.0.1",
-    "electron-updater": "^4.3.4",
+    "electron-updater": "^4.3.6",
     "fast-levenshtein": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
