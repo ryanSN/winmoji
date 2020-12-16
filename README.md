@@ -1,28 +1,46 @@
-## winMoji
-
 <div align="center">
-  <h1>
     <img src="https://github.com/ryanSN/winmoji/blob/master/winMoji.gif" alt="winMoji" title="winMoji" />
-  </h1>
+    <h1>winMoji</h1>
 </div>
 
-![CI](https://github.com/ryanSN/winmoji/workflows/CI/badge.svg)
-[![jest](https://facebook.github.io/jest/img/jest-badge.svg)](https://github.com/facebook/jest)
-[![Coverage Status](https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg)](https://coveralls.io/github/ryanSN/winmoji)
-[![Known Vulnerabilities](https://snyk.io/test/github/ryanSN/winmoji/badge.svg)](https://snyk.io/test/github/ryanSN/winmoji)
+<p align="center">
+  <br>
+  <a href="#get-winmoji">Installation</a>
+  .
+  <a href="#shield-privacy">Privacy</a>
+  .
+  <a href="#license">License</a>
+  <br/>
+</p>
 
+<p align="center">
 Look up emoji's on windows! It's an alternative solution to using the windows onscreen keyboard or on windows 7 where this keyboard does not exist.
 
 🤓😎😆😐
+<br/>
+<br/>
+
+</p>
+
+<p align="center">
+  <a href="https://github.com/ryanSN/winmoji/actions?query=workflow%3ACI">
+    <image src="https://github.com/ryanSN/winmoji/workflows/CI/badge.svg" alt="CI">
+  </a>
+    <image src="https://img.shields.io/github/downloads/ryansn/winmoji/total" alt="downloads">
+  <a href="https://coveralls.io/github/ryanSN/winmoji">
+    <image src="https://coveralls.io/repos/github/ryanSN/winmoji/badge.svg" alt="coveralls">
+  </a>
+</p>
+
+## Get winMoji
+
+**[Download the latest release](https://github.com/ryanSN/winmoji/releases)** (Windows only)
 
 ## Features
 
-Clicking on the emoji saves the emoji to your clipboard to be pasted anywhere you need it.
-Using shortcut `CTRL+SHIFT+E` will toggle winMoji for quick adding of emojis.
+- Clicking on the emoji saves the emoji to your clipboard, Allowing to be pasted anywhere you need it.
 
-## Download/Install
-
-You can manually download the latest release [here](https://github.com/ryanSN/winmoji/releases)
+- Using shortcut `CTRL+SHIFT+E` will toggle winMoji for quick adding of emojis.
 
 ## How do I contribute to `winMoji` ?
 
@@ -49,12 +67,16 @@ $ yarn release
 To package for debug purpose
 
 ```
-$ yarn pack
+$ yarn build:win
 ```
 
 ## :shield: Privacy
 
+winMoji collects anonymous users statics to help us make the app better.
+
 This app has analytics that will track number of users only ([analytics.js](https://github.com/ryansn/winmoji/blob/master/app/helpers/analytics.js)).
+
+This app never sends any personally identifying information, nor does it track what emojis you have selected.
 
 ## License
 

@@ -1,6 +1,6 @@
 const { dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
-const pkg = require('./package.json');
+const pkg = require('../../package.json');
 
 autoUpdater.on('error', (ev, err) => {
   console.log('Event: ' + JSON.stringify(ev) + '. MESSAGE: ' + err);
