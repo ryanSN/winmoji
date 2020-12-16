@@ -3,7 +3,7 @@
   "productName": "winMoji",
   "version": "2.3.0",
   "description": "Emoji Search for Windows",
-  "main": "main.js",
+  "main": "app/main.js",
   "author": "ryanSn <winmoji@rchatter.com>",
   "license": "MIT",
   "scripts": {
@@ -11,10 +11,9 @@
     "prettier-ci": "prettier --check .",
     "test": "cross-env NODE_ENV=test jest",
     "coverage": "yarn && jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
-    "start": "yarn && yarn compile && electron main.js",
+    "start": "yarn && yarn compile && electron ./app/main.js",
     "compile": "webpack --mode=production",
-    "dev": "yarn && yarn compile && electron main.js",
-    "pack": "yarn compile && build --dir",
+    "dev": "yarn && yarn compile && electron ./app/main.js",
     "build:win": "electron-builder --win",
     "build:win:ci": "electron-builder --win -p never",
     "release": "rm -rf dist && yarn compile && electron-builder build --win --publish always"

@@ -1,7 +1,7 @@
 const path = require('path');
 const electron = require('electron');
 const platform = require('os').platform();
-const windows = require('./app/windows');
+const windows = require('../windows');
 
 const app = electron.app;
 let tray = null;
@@ -13,15 +13,15 @@ exports.create = (win) => {
 
   let iconPath = null;
   if (platform === 'win32') {
-    iconPath = path.join(__dirname, 'assets/icons/win/icon.ico');
+    iconPath = path.join(__dirname, '../../assets/icons/win/icon.ico');
   } else if (platform === 'darwin') {
     if (electron.nativeTheme.shouldUseDarkColors) {
-      iconPath = path.join(__dirname, 'assets/icons/mac/trayIcon@2x.png');
+      iconPath = path.join(__dirname, '../../assets/icons/mac/trayIcon@2x.png');
     } else {
-      iconPath = path.join(__dirname, 'assets/icons/mac/trayIcon_light@2x.png');
+      iconPath = path.join(__dirname, '../../assets/icons/mac/trayIcon_light@2x.png');
     }
   } else {
-    iconPath = path.join(__dirname, 'assets/icons/png/24x24.png');
+    iconPath = path.join(__dirname, '../../assets/icons/png/24x24.png');
   }
 
   const toggleWindow = () => {

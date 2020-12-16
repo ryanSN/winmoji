@@ -1,14 +1,14 @@
 const { app, BrowserWindow, globalShortcut } = require('electron');
 const isDev = require('electron-is-dev');
 const path = require('path');
-const tray = require('./tray');
-const updater = require('./updater');
-const { activateUser } = require('./app/helpers/analytics');
-const store = require('./app/store');
+const tray = require('./helpers/tray');
+const updater = require('./helpers/updater');
+const { activateUser } = require('./helpers/analytics');
+const store = require('./store');
 
 require('v8-compile-cache');
 
-const mainPage = path.join('file://', __dirname, '/index.html');
+const mainPage = path.join('file://', __dirname, '/windows/index.html');
 
 const appName = 'winEmoji';
 let mainWindow;
@@ -27,6 +27,7 @@ const createWindow = () => {
     y,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
   });
   mainWindow.loadURL(mainPage);
