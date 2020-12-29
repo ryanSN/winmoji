@@ -80,4 +80,4 @@ This app never sends any personally identifying information, nor does it track w
 
 ## License
 
-MIT © [Ryan Chatterton](./LICENSE)
+MIT © [Ryan Chatterton](./LICENSE.md)
