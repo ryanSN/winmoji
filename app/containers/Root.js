@@ -44,7 +44,7 @@ const emojiList = (search) => {
 function Root() {
   const [recentEmojis, setRecentEmojis] = useState([]);
   const [search, setSearch] = useState('');
-  let inputSearch = null;
+  const inputSearch = React.createRef();
 
   useEffect(() => {
     ipcRenderer.on('window-open', (event, message) => {
@@ -55,8 +55,8 @@ function Root() {
     };
   }, []);
 
-  const handleOnChange = (value) => {
-    setSearch(value);
+  const handleOnChange = (event) => {
+    setSearch(event.target.value);
   };
 
   const handleOnEmojiClick = (event, emoji) => {
@@ -73,12 +73,7 @@ function Root() {
 
   return (
     <div>
-      <Search
-        onChange={(event) => handleOnChange(event.target.value)}
-        inputRef={(input) => {
-          inputSearch = input;
-        }}
-      />
+      <Search onChange={handleOnChange} inputRef={inputSearch} />
       <div className="emojis">
         {recentEmojis.length > 0 && (
           <>
