@@ -50,6 +50,9 @@ function Root() {
     ipcRenderer.on('window-open', (event, message) => {
       inputSearch.focus();
     });
+    return () => {
+      ipcRenderer.removeAllListeners('window-open');
+    };
   }, []);
 
   const handleOnChange = (value) => {
@@ -71,7 +74,7 @@ function Root() {
   return (
     <div>
       <Search
-        onChange={(event) => handleOnChange(event)}
+        onChange={(event) => handleOnChange(event.target.value)}
         inputRef={(input) => {
           inputSearch = input;
         }}
