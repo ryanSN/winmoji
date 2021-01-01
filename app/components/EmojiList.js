@@ -6,7 +6,7 @@ const EmojiList = ({ filteredContent, onEmojiClick }) => {
       {filteredContent.map((emoji, idx) => {
         return (
           <li key={idx} className="results__item">
-            <a href="#" className="results__link" onClick={() => onEmojiClick(this, emoji)}>
+            <a href="#" className="results__link" onClick={(event) => onEmojiClick(event, emoji)}>
               {emoji.char}
             </a>
           </li>
