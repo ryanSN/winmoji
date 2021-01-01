@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Search from '../components/Search';
 import EmojiList from '../components/EmojiList';
 import * as winmojilib from 'winmojilib';
@@ -41,65 +41,59 @@ const emojiList = (search) => {
   return emojis.length === 0 ? transformedEmojis : emojis;
 };
 
-export default class Root extends Component {
-  constructor() {
-    super();
-    this.state = {
-      recentEmojis: [],
-      search: '',
-    };
+function Root() {
+  const [recentEmojis, setRecentEmojis] = useState([]);
+  const [search, setSearch] = useState('');
+  let inputSearch = null;
 
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.handleOnEmojiClick = this.handleOnEmojiClick.bind(this);
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     ipcRenderer.on('window-open', (event, message) => {
-      this.inputSearch.focus();
+      inputSearch.focus();
     });
-  }
+  }, []);
 
-  handleOnChange(event) {
-    this.setState({ search: event.target.value });
-  }
+  const handleOnChange = (value) => {
+    setSearch(value);
+  };
 
-  handleOnEmojiClick(e, emoji) {
-    const { recentEmojis } = this.state;
+  const handleOnEmojiClick = (event, emoji) => {
     const emojiIndex = recentEmojis.findIndex(({ name }) => emoji.name === name);
     const recentQueue =
       emojiIndex >= 0
         ? [emoji, ...recentEmojis.slice(0, emojiIndex), ...recentEmojis.slice(emojiIndex + 1)]
         : [emoji, ...recentEmojis.slice(0, HISTORY_MAX - 1)];
-    this.setState({ recentEmojis: recentQueue });
+    setRecentEmojis(recentQueue);
     clipboard.writeText(emoji.char);
-  }
+  };
 
-  render() {
-    const searchedEmojis = emojiList(this.state.search.toLowerCase());
-    const { recentEmojis } = this.state;
+  const searchedEmojis = emojiList(search.toLowerCase());
 
-    return (
-      <div>
-        <Search
-          onChange={this.handleOnChange}
-          inputRef={(input) => {
-            this.inputSearch = input;
-          }}
-        />
-        <div className="emojis">
-          {recentEmojis.length > 0 && (
-            <>
-              <span className="recent__title">Recent:</span>
-              <div className="recent">
-                <EmojiList filteredContent={recentEmojis} onEmojiClick={this.handleOnEmojiClick} />
-              </div>
-            </>
-          )}
-          <div className="results">
-            <EmojiList filteredContent={searchedEmojis} onEmojiClick={this.handleOnEmojiClick} />
-          </div>
+  return (
+    <div>
+      <Search
+        onChange={(event) => handleOnChange(event)}
+        inputRef={(input) => {
+          inputSearch = input;
+        }}
+      />
+      <div className="emojis">
+        {recentEmojis.length > 0 && (
+          <>
+            <span className="recent__title">Recent:</span>
+            <div className="recent">
+              <EmojiList
+                filteredContent={recentEmojis}
+                onEmojiClick={(event) => handleOnEmojiClick(event)}
+              />
+            </div>
+          </>
+        )}
+        <div className="results">
+          <EmojiList filteredContent={searchedEmojis} onEmojiClick={handleOnEmojiClick} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default Root;
