@@ -79,7 +79,6 @@ if (!lockSingleInstance) {
 
   app.on('ready', () => {
     createWindow();
-    mainWindow.webContents.openDevTools();
     if (!isDev) {
       updater.checkForUpdates();
     }
