@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Search from '../components/Search';
 import EmojiList from '../components/EmojiList';
 import * as winmojilib from 'winmojilib';
@@ -44,11 +44,11 @@ const emojiList = (search) => {
 function Root() {
   const [recentEmojis, setRecentEmojis] = useState([]);
   const [search, setSearch] = useState('');
-  const inputSearch = React.createRef();
+  const inputSearch = useRef();
 
   useEffect(() => {
     ipcRenderer.on('window-open', (event, message) => {
-      inputSearch.focus();
+      inputSearch.current.focus();
     });
     return () => {
       ipcRenderer.removeAllListeners('window-open');
@@ -73,7 +73,7 @@ function Root() {
 
   return (
     <div>
-      <Search onChange={handleOnChange} inputRef={inputSearch} />
+      <Search autoFocus onChange={handleOnChange} ref={inputSearch} />
       <div className="emojis">
         {recentEmojis.length > 0 && (
           <>
