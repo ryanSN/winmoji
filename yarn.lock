@@ -7540,10 +7540,10 @@ wildcard@^2.0.0:
   resolved "https://registry.yarnpkg.com/wildcard/-/wildcard-2.0.0.tgz#a77d20e5200c6faaac979e4b3aadc7b3dd7f8fec"
   integrity sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==
 
-winmojilib@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/winmojilib/-/winmojilib-0.3.1.tgz#b6f3408eb28441247e33fd729ab45498fbf5b638"
-  integrity sha512-0G6POU5uxSytfxvSj1ny4LH58d/7YlrU0cXq9fEtXUg5eU+fVoo0+VWGaVVb8Jtqdv8OHtpIX7K8X3xrEGvrEQ==
+winmojilib@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/winmojilib/-/winmojilib-0.3.3.tgz#3c4857862174d588785a349a1fca8c2c7945abb7"
+  integrity sha512-/iPvqSYVYlH6gwLp/Hoigs125YcCt3p8KRvKCgdT5XgOu0LzKNteBfwtRym3pdcikfn35bvnrhdZ0PY4Rx/Zfw==
 
 word-wrap@~1.2.3:
   version "1.2.3"
