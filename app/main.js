@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron');
 const isDev = require('electron-is-dev');
 const path = require('path');
 const tray = require('./helpers/tray');
@@ -16,6 +16,9 @@ let isQuitting = false;
 
 const createWindow = () => {
   const { x, y } = store.get('windowBounds');
+  const disableGlobalShortcut = store.get('disableGlobalShortcut');
+  const defaultGlobalShortcut = store.get('defaultGlobalShortcut');
+
   mainWindow = new BrowserWindow({
     width: 280,
     height: 400,
@@ -44,14 +47,16 @@ const createWindow = () => {
   });
 
   // register global shortcut
-  globalShortcut.register('CommandOrControl+Shift+E', () => {
-    if (!mainWindow.isVisible()) {
-      mainWindow.show();
-      mainWindow.webContents.send('window-open');
-    } else {
-      mainWindow.hide();
-    }
-  });
+  if (!disableGlobalShortcut) {
+    globalShortcut.register(defaultGlobalShortcut, () => {
+      if (!mainWindow.isVisible()) {
+        mainWindow.show();
+        mainWindow.webContents.send('window-open');
+      } else {
+        mainWindow.hide();
+      }
+    });
+  }
 };
 
 const lockSingleInstance = app.requestSingleInstanceLock();
@@ -71,9 +76,9 @@ if (!lockSingleInstance) {
   app.on('will-quit', () => {
     // clean up after ourselves
     // Unregister a shortcut.
-    globalShortcut.unregister('CommandOrControl+Shift+E');
-
-    // Unregister all shortcuts.
+    if (!disableGlobalShortcut) {
+      globalShortcut.unregister(defaultGlobalShortcut);
+    }
     globalShortcut.unregisterAll();
   });
 
@@ -95,3 +100,5 @@ if (!lockSingleInstance) {
 
   activateUser();
 }
+
+app.setAppUserModelId('com.rchatters.winmoji');

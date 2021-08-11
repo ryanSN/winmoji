@@ -4,7 +4,11 @@
   "version": "2.3.0",
   "description": "Emoji Search for Windows",
   "main": "app/main.js",
-  "author": "ryanSn <winmoji@rchatter.com>",
+  "author": {
+    "name": "ryanSn <winmoji@rchatter.com>",
+    "email": "winmoji@rchatter.com",
+    "url": "https://www.winmoji.com/"
+  },
   "license": "MIT",
   "scripts": {
     "prettier": "prettier --write .",
@@ -22,7 +26,7 @@
     "electron-is-dev": "^1.2.0",
     "electron-localshortcut": "^3.0.4",
     "electron-store": "^6.0.1",
-    "electron-updater": "^4.3.10",
+    "electron-updater": "^4.3.9",
     "fast-levenshtein": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -41,7 +45,7 @@
     "babel-loader": "^8.0.0-beta",
     "coveralls": "^3.0.5",
     "cross-env": "^7.0.3",
-    "electron": "^11.1.0",
+    "electron": "^13.1.9",
     "electron-builder": "^22.1.0",
     "jest": "^26.4.2",
     "pre-commit": "^1.2.2",
@@ -133,6 +137,6 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": "12.18"
+    "node": "15.3"
   }
 }
