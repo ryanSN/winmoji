@@ -74,6 +74,9 @@
     "wait-on": "^6.0.0"
   },
   "build": {
+    "extraMetadata": {
+      "main": "build/electron/main.js"
+    },
     "appId": "com.rchatters.winmoji",
     "copyright": "Copyright © 2017-2021 ryanSN",
     "productName": "winMoji",
