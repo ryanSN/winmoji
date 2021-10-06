@@ -3,7 +3,7 @@ import Search from '../components/Search/Search';
 import EmojiList from '../components/EmojiList/EmojiList';
 import * as winmojilib from 'winmojilib';
 import lev from 'fast-levenshtein';
-const { clipboard } = window.require('electron');
+const { clipboard, ipcRenderer } = window.require('electron');
 
 interface Emoji {
   name: string;
@@ -91,6 +91,7 @@ const Home = () => {
           <EmojiList filteredContent={searchedEmojis} onEmojiClick={handleOnEmojiClick} />
         </div>
       </div>
+      <button onClick={() => ipcRenderer.send('change-global-shortcut', 'ping')}>test</button>
     </div>
   );
 };

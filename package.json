@@ -41,7 +41,6 @@
     ]
   },
   "dependencies": {
-    "@types/uuid": "^8.3.1",
     "electron-devtools-installer": "^3.2.0",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-store": "^8.0.1",
@@ -67,6 +66,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/universal-analytics": "^0.4.5",
+    "@types/uuid": "^8.3.1",
     "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
     "electron": "^15.1.1",

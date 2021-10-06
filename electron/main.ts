@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut } from 'electron';
+import { app, BrowserWindow, globalShortcut, ipcMain } from 'electron';
 import * as path from 'path';
 import installExtension, { REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import store from './utils/store';
@@ -12,8 +12,9 @@ let isQuitting = false;
 
 function createWindow() {
   const { x, y } = store.get('windowBounds');
-  const disableGlobalShortcut = store.get('disableGlobalShortcut');
-  const defaultGlobalShortcut = store.get('defaultGlobalShortcut');
+  const disableGlobalShortcut = store.get('disableGlobalShortcut') || false;
+  const defaultGlobalShortcut: string =
+    store.get('defaultGlobalShortcut') || 'CommandOrControl+Shift+E';
 
   mainWindow = new BrowserWindow({
     width: 280,
@@ -22,6 +23,7 @@ function createWindow() {
     icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
     x,
     y,
+    backgroundColor: store.get('isDarkMode') ? '#141e25' : '#ffffff',
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -113,23 +115,28 @@ if (!lockSingleInstance) {
     if (app.isPackaged) {
       updater();
     }
+  });
 
-    app.on('activate', () => {
-      if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
-      } else {
-        mainWindow.show();
-        mainWindow.webContents.send('window-open');
-      }
-    });
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    } else {
+      mainWindow.show();
+      mainWindow.webContents.send('window-open');
+    }
+  });
 
-    app.on('window-all-closed', () => {
-      if (process.platform !== 'darwin') {
-        app.quit();
-      }
-    });
+  app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+      app.quit();
+    }
   });
 
   activateUser();
 }
+
+ipcMain.on('change-global-shortcut', (event, arg) => {
+  console.log(arg);
+});
+
 app.setAppUserModelId('com.rchatters.winmoji');
