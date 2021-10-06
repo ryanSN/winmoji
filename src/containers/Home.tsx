@@ -1,9 +1,19 @@
-import React, { useRef, useState, useEffect } from 'react';
-import Search from '../components/Search';
-import EmojiList from '../components/EmojiList';
+import React, { useRef, useState } from 'react';
+import Search from '../components/Search/Search';
+import EmojiList from '../components/EmojiList/EmojiList';
 import * as winmojilib from 'winmojilib';
 import lev from 'fast-levenshtein';
-import { clipboard, ipcRenderer } from 'electron';
+const { clipboard } = window.require('electron');
+
+interface Emoji {
+  name: string;
+  char: string;
+  sim?: number | undefined;
+  keywords: string[];
+  group: string;
+  hexcode: string;
+  subgroup: string;
+}
 
 const HISTORY_MAX = 5;
 const transformedEmojis = Object.entries(winmojilib.lib).map(([name, details]) => ({
@@ -11,21 +21,24 @@ const transformedEmojis = Object.entries(winmojilib.lib).map(([name, details]) =
   name,
 }));
 
-const similarity = (() => {
-  const mem = {};
-  return (_a) => (_b) => {
+const similarity: (a: string) => (b: string) => number = (() => {
+  const mem: { [ab: string]: number } = {};
+
+  return (_a: string) => (_b: string) => {
     const [a, b] = _b < _a ? [_b, _a] : [_a, _b];
 
-    if (!([a, b] in mem)) {
-      mem[[a, b]] = 1 - lev.get(a, b) / Math.max(a.length, b.length);
+    const ab = [a, b].toString();
+
+    if (!(ab in mem)) {
+      mem[ab] = 1 - lev.get(a, b) / Math.max(a.length, b.length);
     }
 
-    return mem[[a, b]];
+    return mem[ab];
   };
 })();
 
-const emojiList = (search) => {
-  const emojis = transformedEmojis
+const emojiList = (search: string) => {
+  const emojis: Emoji[] = transformedEmojis
     .map((emoji) => {
       const searchSim = similarity(search);
       const sims = [searchSim(emoji.name)].concat(emoji.keywords.map(searchSim));
@@ -33,7 +46,7 @@ const emojiList = (search) => {
     })
     .filter(({ sim }) => sim >= 0.5)
     .sort((a, b) => b.sim - a.sim)
-    .map((emoji) => {
+    .map((emoji: Emoji) => {
       delete emoji.sim;
       return emoji;
     });
@@ -41,26 +54,17 @@ const emojiList = (search) => {
   return emojis.length === 0 ? transformedEmojis : emojis;
 };
 
-function Root() {
-  const [recentEmojis, setRecentEmojis] = useState([]);
+const Home = () => {
+  const [recentEmojis, setRecentEmojis] = useState<{ name: any; char: string }[]>([]);
   const [search, setSearch] = useState('');
-  const inputSearch = useRef();
+  const inputSearch = useRef<null | HTMLInputElement>(null);
 
-  useEffect(() => {
-    ipcRenderer.on('window-open', (event, message) => {
-      inputSearch.current.focus();
-    });
-    return () => {
-      ipcRenderer.removeAllListeners('window-open');
-    };
-  }, []);
-
-  const handleOnChange = (event) => {
+  const handleOnChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setSearch(event.target.value);
   };
 
-  const handleOnEmojiClick = (event, emoji) => {
-    const emojiIndex = recentEmojis.findIndex(({ name }) => emoji.name === name);
+  const handleOnEmojiClick = (emoji: { name: any; char: string }) => {
+    const emojiIndex = recentEmojis.findIndex(({ name }) => emoji?.name === name);
     const recentQueue =
       emojiIndex >= 0
         ? [emoji, ...recentEmojis.slice(0, emojiIndex), ...recentEmojis.slice(emojiIndex + 1)]
@@ -73,16 +77,13 @@ function Root() {
 
   return (
     <div>
-      <Search autoFocus onChange={handleOnChange} ref={inputSearch} />
+      <Search onChange={handleOnChange} ref={inputSearch} />
       <div className="emojis">
         {recentEmojis.length > 0 && (
           <>
             <span className="recent__title">Recent:</span>
             <div className="recent">
-              <EmojiList
-                filteredContent={recentEmojis}
-                onEmojiClick={(event) => handleOnEmojiClick(event)}
-              />
+              <EmojiList filteredContent={recentEmojis} onEmojiClick={handleOnEmojiClick} />
             </div>
           </>
         )}
@@ -92,6 +93,6 @@ function Root() {
       </div>
     </div>
   );
-}
+};
 
-export default Root;
+export default Home;

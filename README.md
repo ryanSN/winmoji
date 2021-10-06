@@ -74,7 +74,7 @@ $ yarn build:win
 
 winMoji collects anonymous users statics to help us make the app better.
 
-This app has analytics that will track number of users only ([analytics.js](https://github.com/ryansn/winmoji/blob/master/app/helpers/analytics.js)).
+This app has analytics that will track number of users only ([analytics.js](https://github.com/ryansn/winmoji/blob/master/electron/helpers/analytics.ts)).
 
 This app never sends any personally identifying information, nor does it track what emojis you have selected.
 

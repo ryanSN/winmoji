@@ -1,27 +1,31 @@
-const path = require('path');
-const electron = require('electron');
+import path from 'path';
+import electron from 'electron';
 const platform = require('os').platform();
-const windows = require('../windows');
 
 const app = electron.app;
-let tray = null;
+let tray: Electron.CrossProcessExports.Tray | null = null;
 
-exports.create = (win) => {
+const Tray = (win: {
+  isVisible: () => any;
+  hide: () => void;
+  show: () => void;
+  webContents: { send: (arg0: string) => void };
+}) => {
   if (tray) {
     return;
   }
 
   let iconPath = null;
   if (platform === 'win32') {
-    iconPath = path.join(__dirname, '../../assets/icons/win/icon.ico');
+    iconPath = path.join(__dirname, '../assets/icons/win/icon.ico');
   } else if (platform === 'darwin') {
     if (electron.nativeTheme.shouldUseDarkColors) {
-      iconPath = path.join(__dirname, '../../assets/icons/mac/trayIcon@2x.png');
+      iconPath = path.join(__dirname, '../assets/icons/mac/trayIcon@2x.png');
     } else {
-      iconPath = path.join(__dirname, '../../assets/icons/mac/trayIcon_light@2x.png');
+      iconPath = path.join(__dirname, '../assets/icons/mac/trayIcon_light@2x.png');
     }
   } else {
-    iconPath = path.join(__dirname, '../../assets/icons/png/24x24.png');
+    iconPath = path.join(__dirname, '../assets/icons/png/24x24.png');
   }
 
   const toggleWindow = () => {
@@ -41,12 +45,6 @@ exports.create = (win) => {
       },
     },
     {
-      label: 'About',
-      click() {
-        windows.about.init();
-      },
-    },
-    {
       type: 'separator',
     },
     {
@@ -59,3 +57,5 @@ exports.create = (win) => {
   tray.setContextMenu(contextMenu);
   tray.on('click', toggleWindow);
 };
+
+export default Tray;

@@ -1,12 +1,12 @@
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const store = new Store({
-  configName: 'user-perferences',
+  name: 'user-perferences',
   defaults: {
-    windowBounds: { x: null, y: null },
+    windowBounds: { x: undefined, y: undefined },
     disableGlobalShortcut: false,
     defaultGlobalShortcut: 'CommandOrControl+Shift+E',
   },
 });
 
-module.exports = store;
+export default store;
