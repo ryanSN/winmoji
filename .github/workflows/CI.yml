@@ -30,8 +30,8 @@ jobs:
       # - name: Make Pretty
       #   run: yarn prettier-ci
 
-      - name: Test
-        run: yarn test
+      # - name: Test
+      #   run: yarn test
 
       - name: Build
         env:
