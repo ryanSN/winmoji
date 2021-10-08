@@ -11,7 +11,7 @@ let mainWindow: BrowserWindow;
 let isQuitting = false;
 
 function createWindow() {
-  const { x, y } = store.get('windowBounds');
+  const { x, y } = store.get('windowBounds') || { x: undefined, y: undefined };
   const disableGlobalShortcut = store.get('disableGlobalShortcut') || false;
   const defaultGlobalShortcut: string =
     store.get('defaultGlobalShortcut') || 'CommandOrControl+Shift+E';

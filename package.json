@@ -4,6 +4,7 @@
   "version": "3.0.0",
   "main": "build/electron/main.js",
   "private": false,
+  "homepage": "./",
   "author": {
     "name": "ryanSn <winmoji@rchatter.com>",
     "email": "winmoji@rchatter.com",

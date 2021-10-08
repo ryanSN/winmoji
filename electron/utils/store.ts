@@ -9,7 +9,9 @@ type StoreProps = {
   defaultGlobalShortCut: string;
 };
 
-const store = new Store<StoreProps>();
+const store = new Store<StoreProps>({
+  name: 'user-preferences',
+});
 
 if (store.get('isDarkMode') === null) {
   store.set('isDarkMode', nativeTheme.shouldUseDarkColors);
