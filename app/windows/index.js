@@ -1,1 +1,0 @@
-exports.about = require('./about');

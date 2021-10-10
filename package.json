@@ -1,9 +1,10 @@
 {
   "name": "winmoji",
   "productName": "winMoji",
-  "version": "2.3.0",
-  "description": "Emoji Search for Windows",
-  "main": "app/main.js",
+  "version": "3.0.0",
+  "main": "build/electron/main.js",
+  "private": false,
+  "homepage": "./",
   "author": {
     "name": "ryanSn <winmoji@rchatter.com>",
     "email": "winmoji@rchatter.com",
@@ -12,92 +13,73 @@
   "license": "MIT",
   "scripts": {
     "prettier": "prettier --write .",
-    "prettier-ci": "prettier --check .",
-    "test": "cross-env NODE_ENV=test jest",
-    "coverage": "yarn && jest --coverage && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage && exit 0",
-    "start": "yarn && yarn compile && electron ./app/main.js",
-    "compile": "webpack --mode=production",
-    "dev": "cross-env ELECTRON_IS_DEV=true yarn && yarn compile && electron ./app/main.js",
-    "build:win": "electron-builder --win",
-    "build:win:ci": "electron-builder --win -p never",
-    "release": "rm -rf dist && yarn compile && electron-builder build --win --publish always"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "postinstall": "electron-builder install-app-deps",
+    "dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && tsc -p electron -w\" \"wait-on http://localhost:3000 && tsc -p electron && electron .\"",
+    "build:win": "yarn build && tsc -p electron && electron-builder --win",
+    "build:win:ci": "yarn build && tsc -p electron && electron-builder --win -p never",
+    "release": "rm -rf build && yarn tsc -p electron && electron-builder build --win --publish always",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "dependencies": {
-    "electron-is-dev": "^1.2.0",
-    "electron-localshortcut": "^3.0.4",
-    "electron-store": "^6.0.1",
-    "electron-updater": "^4.5.2",
-    "fast-levenshtein": "^2.0.6",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "electron-devtools-installer": "^3.2.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-store": "^8.0.1",
+    "electron-updater": "^4.3.9",
+    "fast-levenshtein": "^3.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2",
     "universal-analytics": "^0.4.23",
     "uuid": "^8.3.2",
-    "v8-compile-cache": "^2.3.0",
+    "web-vitals": "^1.0.1",
     "winmojilib": "^0.3.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "babel-core": "^7.0.0-0",
-    "babel-jest": "^26.3.0",
-    "babel-loader": "^8.0.0-beta",
-    "coveralls": "^3.0.5",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@types/fast-levenshtein": "^0.0.2",
+    "@types/jest": "^26.0.15",
+    "@types/node": "14.17.20",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/universal-analytics": "^0.4.5",
+    "@types/uuid": "^8.3.1",
+    "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
-    "electron": "^13.1.9",
-    "electron-builder": "^22.1.0",
-    "jest": "^26.4.2",
-    "pre-commit": "^1.2.2",
-    "prettier": "2.1.1",
-    "react-test-renderer": "^16.6.3",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.1.11"
-  },
-  "pre-commit": [
-    "prettier-ci"
-  ],
-  "standard": {
-    "globals": [
-      "describe",
-      "context",
-      "before",
-      "beforeEach",
-      "after",
-      "afterEach",
-      "it",
-      "expect"
-    ],
-    "ignore": [
-      "__mocks__/**"
-    ]
-  },
-  "jest": {
-    "testURL": "http://localhost/",
-    "collectCoverage": true,
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    },
-    "unmockedModulePathPatterns": [
-      "react"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
+    "electron": "^15.1.1",
+    "electron-builder": "^22.11.7",
+    "wait-on": "^6.0.0"
   },
   "build": {
+    "extraMetadata": {
+      "main": "build/electron/main.js"
+    },
     "appId": "com.rchatters.winmoji",
-    "copyright": "Copyright © 2017-2020 ryanSN",
+    "copyright": "Copyright © 2017-2021 ryanSN",
     "productName": "winMoji",
     "win": {
       "target": [
@@ -116,7 +98,7 @@
           ]
         }
       ],
-      "icon": "assets/icons/win/icon.ico"
+      "icon": "electron/assets/icons/win/icon.ico"
     },
     "portable": {
       "artifactName": "winMoji-v${version}-portable.${ext}"
@@ -134,9 +116,5 @@
         "repo": "winMoji"
       }
     ]
-  },
-  "engineStrict": true,
-  "engines": {
-    "node": "15.3"
   }
 }
