@@ -144,7 +144,6 @@ ipcMain.on('change-global-shortcut', (event, arg) => {
 });
 
 ipcMain.on(CLIPBOARD_WRITE, (e, char) => {
-  console.log(char);
   clipboard.writeText(char);
 });
 
