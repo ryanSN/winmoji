@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import Search from '../components/Search/Search';
 import EmojiList from '../components/EmojiList/EmojiList';
 import * as winmojilib from 'winmojilib';
 import lev from 'fast-levenshtein';
-const { clipboard, ipcRenderer } = window.require('electron');
+import { ElectronContext } from '../contexts';
+//const { clipboard, ipcRenderer } = window.require('electron');
 
 interface Emoji {
   name: string;
@@ -55,6 +56,8 @@ const emojiList = (search: string) => {
 };
 
 const Home = () => {
+  const { onClipboardWrite } = useContext(ElectronContext);
+
   const [recentEmojis, setRecentEmojis] = useState<{ name: any; char: string }[]>([]);
   const [search, setSearch] = useState('');
   const inputSearch = useRef<null | HTMLInputElement>(null);
@@ -70,7 +73,9 @@ const Home = () => {
         ? [emoji, ...recentEmojis.slice(0, emojiIndex), ...recentEmojis.slice(emojiIndex + 1)]
         : [emoji, ...recentEmojis.slice(0, HISTORY_MAX - 1)];
     setRecentEmojis(recentQueue);
-    clipboard.writeText(emoji.char);
+    if (onClipboardWrite) {
+      onClipboardWrite(emoji.char);
+    }
   };
 
   const searchedEmojis = emojiList(search.toLowerCase());
@@ -91,7 +96,6 @@ const Home = () => {
           <EmojiList filteredContent={searchedEmojis} onEmojiClick={handleOnEmojiClick} />
         </div>
       </div>
-      <button onClick={() => ipcRenderer.send('change-global-shortcut', 'ping')}>test</button>
     </div>
   );
 };
