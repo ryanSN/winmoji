@@ -1,11 +1,12 @@
 import './App.css';
 import Home from './containers/Home';
+import { ElectronProvider } from './contexts';
 
 function App() {
   return (
-    <div className="App">
+    <ElectronProvider>
       <Home />
-    </div>
+    </ElectronProvider>
   );
 }
 

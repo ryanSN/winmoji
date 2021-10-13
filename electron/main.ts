@@ -5,6 +5,8 @@ import store from './utils/store';
 import activateUser from './helpers/analytics';
 import tray from './helpers/tray';
 import updater from './helpers/updater';
+import { CLIPBOARD_WRITE } from '../src/shared';
+import { clipboard } from 'electron/common';
 
 const appName = 'winEmoji';
 let mainWindow: BrowserWindow;
@@ -25,8 +27,10 @@ function createWindow() {
     y,
     backgroundColor: store.get('isDarkMode') ? '#141e25' : '#ffffff',
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
+      nodeIntegration: false,
+      contextIsolation: true,
+      backgroundThrottling: false,
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
 
@@ -137,6 +141,11 @@ if (!lockSingleInstance) {
 
 ipcMain.on('change-global-shortcut', (event, arg) => {
   console.log(arg);
+});
+
+ipcMain.on(CLIPBOARD_WRITE, (e, char) => {
+  console.log(char);
+  clipboard.writeText(char);
 });
 
 app.setAppUserModelId('com.rchatters.winmoji');
