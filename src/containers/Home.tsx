@@ -4,7 +4,6 @@ import EmojiList from '../components/EmojiList/EmojiList';
 import * as winmojilib from 'winmojilib';
 import lev from 'fast-levenshtein';
 import { ElectronContext } from '../contexts';
-//const { clipboard, ipcRenderer } = window.require('electron');
 
 interface Emoji {
   name: string;
@@ -78,6 +77,9 @@ const Home = () => {
     }
   };
 
+  // for getting groups (future tab filter)
+  // const unique = [...new Set(searchedEmojis.map((item) => item.group))];
+  // console.log('unique', unique);
   const searchedEmojis = emojiList(search.toLowerCase());
 
   return (
