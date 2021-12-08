@@ -42,7 +42,7 @@
     ]
   },
   "dependencies": {
-    "@types/styled-components": "^5.1.15",
+    "@types/styled-components": "^5.1.16",
     "electron-devtools-installer": "^3.2.0",
     "electron-reload": "^2.0.0-alpha.1",
     "electron-store": "^8.0.1",
