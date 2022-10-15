@@ -4,7 +4,7 @@ import EmojiList from '../components/EmojiList/EmojiList';
 import * as winmojilib from 'winmojilib';
 import lev from 'fast-levenshtein';
 import { ElectronContext } from '../contexts';
-
+import styled from 'styled-components/macro';
 interface Emoji {
   name: string;
   char: string;
@@ -14,6 +14,10 @@ interface Emoji {
   hexcode: string;
   subgroup: string;
 }
+
+const StyledEmojiContainer = styled.div`
+  padding: 5px;
+`;
 
 const HISTORY_MAX = 5;
 const transformedEmojis = Object.entries(winmojilib.lib).map(([name, details]) => ({
@@ -83,7 +87,7 @@ const Home = () => {
   const searchedEmojis = emojiList(search.toLowerCase());
 
   return (
-    <div>
+    <StyledEmojiContainer>
       <Search onChange={handleOnChange} ref={inputSearch} />
       <div className="emojis">
         {recentEmojis.length > 0 && (
@@ -98,7 +102,7 @@ const Home = () => {
           <EmojiList filteredContent={searchedEmojis} onEmojiClick={handleOnEmojiClick} />
         </div>
       </div>
-    </div>
+    </StyledEmojiContainer>
   );
 };
 
