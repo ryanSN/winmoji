@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/macro';
 
 const TitleBarButton = css`
-  width: 4rem;
+  width: 3rem;
   height: 100%;
   border: none;
   background-color: transparent;
@@ -94,5 +94,9 @@ export const StyledCloseButton = styled.button`
   }
   &::after {
     transform: rotate(-45deg);
+  }
+  &:hover {
+    background-color: red;
+    color: #fff;
   }
 `;
