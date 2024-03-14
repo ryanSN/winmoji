@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-Look up emoji's on windows! It's an alternative solution to using the windows onscreen keyboard or on windows 7 where this keyboard does not exist.
+Look up emojis on Windows! It's an alternative solution to using the Windows onscreen keyboard or on Windows 7 where this keyboard does not exist.
 
 🤓😎😆😐
 <br/>
